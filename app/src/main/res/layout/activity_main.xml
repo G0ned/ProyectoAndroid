@@ -11,6 +11,5 @@
     app:navGraph="@navigation/nav"
     app:defaultNavHost="true"
     tools:layout="@layout/fragment_inicio"
-    android:padding="16dp"
 
     />
