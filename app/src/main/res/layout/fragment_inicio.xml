@@ -8,12 +8,12 @@
 
     <Button
         android:id="@+id/reserva_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="61dp"
         android:layout_marginTop="244dp"
+        android:backgroundTint="#800020"
         android:text="@string/tag_reservas"
         android:textSize="32dp"
-        android:backgroundTint="#800020"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
