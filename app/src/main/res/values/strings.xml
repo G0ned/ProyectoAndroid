@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ProyectoAndroid</string>
+    <string name="tag_reservas">Reservas</string>
+    <string name="tag_incidencias">Incidencias</string>
+</resources>
