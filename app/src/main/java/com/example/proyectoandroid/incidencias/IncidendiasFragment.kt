@@ -20,7 +20,7 @@ class IncidendiasFragment : Fragment() {
     }
     fun initRecyclerView(){
         val recyclerView = view?.findViewById<RecyclerView>(R.id.inci_recyc)
-        recyclerView?.layoutManager=LinearLayoutManager(applicationContext)
+        recyclerView?.layoutManager=LinearLayoutManager(context)
 
     }
 
