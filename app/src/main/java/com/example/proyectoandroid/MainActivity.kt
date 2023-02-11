@@ -11,15 +11,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        // comprobando esto no se generan 2 pantallas a la hora de rotar la pantalla.
-        if (savedInstanceState == null) {
-
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                add<InicioFragment>(R.id.fragmentContainerView)
-            }
-
-        }
-
     }
 }

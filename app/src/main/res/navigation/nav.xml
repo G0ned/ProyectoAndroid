@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/inicioFragment">
+
+    <fragment
+        android:id="@+id/incidendiasFragment"
+        android:name="com.example.proyectoandroid.incidencias.IncidendiasFragment"
+        android:label="fragment_incidendias"
+        tools:layout="@layout/fragment_incidendias" />
+    <fragment
+        android:id="@+id/reservasLogInFragment"
+        android:name="com.example.proyectoandroid.reservas.ReservasLogInFragment"
+        android:label="fragment_reservas_log_in"
+        tools:layout="@layout/fragment_reservas_log_in" />
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.example.proyectoandroid.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_reservasLogInFragment"
+            app:destination="@id/reservasLogInFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_incidendiasFragment"
+            app:destination="@id/incidendiasFragment" />
+    </fragment>
+</navigation>
