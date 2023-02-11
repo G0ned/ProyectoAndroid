@@ -17,15 +17,13 @@
         android:id="@+id/incidencia_profesor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraint_Top_toBottomOf="@+id/incidencia_fecha" />
+        app:layout_constraintTop_toBottomOf="@+id/incidencia_fecha" />
 
     <TextView
         android:id="@+id/incidencia_descripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraint_Top_toBottomOf="@+id/incidencia_profesor" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/incidencia_profesor" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

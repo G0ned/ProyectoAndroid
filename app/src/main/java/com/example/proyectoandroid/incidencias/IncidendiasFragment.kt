@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid.R
+import com.example.proyectoandroid.incidencias.adapter.IncidenciasAdapter
 
 class IncidendiasFragment : Fragment() {
 
@@ -18,9 +19,10 @@ class IncidendiasFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_incidendias, container, false)
     }
-    fun initRecyclerView(){
+    private fun initRecyclerView(){
         val recyclerView = view?.findViewById<RecyclerView>(R.id.inci_recyc)
         recyclerView?.layoutManager=LinearLayoutManager(context)
+        recyclerView?.adapter = IncidenciasAdapter(IncidenciasProv.incidenciasList)
 
     }
 
