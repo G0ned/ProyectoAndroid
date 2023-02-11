@@ -11,17 +11,20 @@ import com.example.proyectoandroid.R
 import com.example.proyectoandroid.incidencias.adapter.IncidenciasAdapter
 
 class IncidendiasFragment : Fragment() {
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_incidendias, container, false)
-        initRecyclerView()
+        val view =  inflater.inflate(R.layout.fragment_incidendias, container, false)
+        initRecyclerView(view)
+        return  view
     }
-    private fun initRecyclerView(){
-        val recyclerView = view?.findViewById<RecyclerView>(R.id.inci_recyc)
-        recyclerView?.layoutManager=LinearLayoutManager(context)
+    private fun initRecyclerView(view : View){
+        val recyclerView = view?.findViewById<RecyclerView>(R.id.recyclerview)
+        recyclerView?.layoutManager= LinearLayoutManager(context)
         recyclerView?.adapter = IncidenciasAdapter(IncidenciasProv.incidenciasList)
 
     }
