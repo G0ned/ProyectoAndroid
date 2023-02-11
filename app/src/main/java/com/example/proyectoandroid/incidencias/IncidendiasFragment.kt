@@ -7,11 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.proyectoandroid.R
 
-/**
- * A simple [Fragment] subclass.
- * Use the [IncidendiasFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class IncidendiasFragment : Fragment() {
     // TODO: Rename and change types of parameters
 
