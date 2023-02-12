@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".incidencias.CrearIncidenciaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/profesor_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profesor_tag_str"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/profesor_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="Un ejemplo"
+            android:textSize="16dp"
+            />
+
+        <TextView
+            android:id="@+id/descripcion_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/descripcion_tag_str"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/descripcion_content"
+            android:layout_width="350dp"
+            android:layout_height="125dp"
+            android:layout_marginBottom="30dp"
+            android:inputType="text|textMultiLine"
+            android:text="Un ejemplo"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/observaciones_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/observaciones_tag_str"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            />
+
+        <EditText
+            android:id="@+id/observaciones_content"
+            android:layout_width="350dp"
+            android:layout_height="125dp"
+            android:layout_marginBottom="30dp"
+            android:inputType="text|textMultiLine"
+            android:text="Un ejemplo"
+            android:textSize="16dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
