@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_crear_incidencia" />
     <fragment
         android:id="@+id/verIncidenciasFragment"
-        android:name="com.example.proyectoandroid.incidencias.adapter.VerIncidenciasFragment"
+        android:name="com.example.proyectoandroid.incidencias.VerIncidenciasFragment"
         android:label="@string/TituloMostrarIncidencia"
         tools:layout="@layout/fragment_ver_incidencias" />
     <fragment
