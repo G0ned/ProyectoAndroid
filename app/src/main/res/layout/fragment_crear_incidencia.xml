@@ -20,12 +20,11 @@
 
         <EditText
             android:id="@+id/profesor_content"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:text="Un ejemplo"
-            android:textSize="16dp"
-            />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/descripcion_tag"
@@ -38,12 +37,12 @@
 
         <EditText
             android:id="@+id/descripcion_content"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="125dp"
             android:layout_marginBottom="30dp"
             android:inputType="text|textMultiLine"
             android:text="Un ejemplo"
-            android:textSize="16dp"/>
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/observaciones_tag"
@@ -56,12 +55,12 @@
 
         <EditText
             android:id="@+id/observaciones_content"
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="125dp"
             android:layout_marginBottom="30dp"
             android:inputType="text|textMultiLine"
             android:text="Un ejemplo"
-            android:textSize="16dp"/>
+            android:textSize="16dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
