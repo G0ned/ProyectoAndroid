@@ -20,4 +20,9 @@
         android:name="com.example.proyectoandroid.incidencias.adapter.VerIncidenciasFragment"
         android:label="@string/TituloMostrarIncidencia"
         tools:layout="@layout/fragment_ver_incidencias" />
+    <fragment
+        android:id="@+id/incidenciasLogInFragment"
+        android:name="com.example.proyectoandroid.incidencias.IncidenciasLogInFragment"
+        android:label="@string/TitulologinIncidencia"
+        tools:layout="@layout/fragment_incidencias_log_in" />
 </navigation>

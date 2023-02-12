@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +40,7 @@ class IncidendiasFragment : Fragment() {
 
     fun goToFullObject( incidencias: Incidencias) {
         Toast.makeText(context,"OK",Toast.LENGTH_SHORT).show()
+        
 
     }
 }
