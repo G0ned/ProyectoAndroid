@@ -19,4 +19,7 @@
     <string name="reservar_tag">Reservar</string>
     <string name="modificar_tag">Modificar</string>
     <string name="mantenimiento_tag">Mantenimiento</string>
+    <string name="TituloIncidencias">Incidencias</string>
+    <string name="TituloMostrarIncidencia">Mostrar incidencia</string>
+    <string name="TituloCrearIncidencia">Crear incidencia</string>
 </resources>
