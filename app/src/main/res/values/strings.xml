@@ -12,16 +12,27 @@
     <string name="observaciones_tag_str">Observaciones</string>
     <string name="estado_tag_str">Estado</string>
     <string name="usuario_tag_str">Usuario</string>
+    <string name="contra_tag_str">Contraseña</string>
     <string name="codigo_equipo_tag_str">Cod. Equipo</string>
     <string name="codigo_aula_tag_str">Cod. Aula</string>
+    <string name="curso_grupo_tag_str">Curso/Grupo</string>
+    <string name="aula_tag_str">Aula</string>
     <string name="crear_bton">Crear</string>
     <string name="limpiar_bton">Limpiar</string>
-    <string name="reservar_tag">Reservar</string>
-    <string name="modificar_tag">Modificar</string>
-    <string name="mantenimiento_tag">Mantenimiento</string>
+    <string name="reservar_grande">Reservar</string>
+    <string name="reservar_tag"><font size="12">Reservar</font></string>
+    <string name="modificar_tag"><font size="12">Modificar</font></string>
+    <string name="mantenimiento_tag"><font size="11">Activar mantenimiento</font></string>
     <string name="TituloIncidencias">Incidencias</string>
     <string name="TituloMostrarIncidencia">Mostrar incidencia</string>
     <string name="TituloCrearIncidencia">Crear incidencia</string>
     <string name="TitulologinIncidencia">Login administrador</string>
     <string name="AyudaFecha">Seleccionar Fecha</string>
+    <string name="iniciosesion">Iniciar Sesión</string>
+    <string name="h1">1º</string>
+    <string name="h2">2º</string>
+    <string name="h3">3º</string>
+    <string name="h4">4º</string>
+    <string name="h5">5º</string>
+    <string name="h6">6º</string>
 </resources>
