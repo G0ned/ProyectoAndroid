@@ -13,11 +13,11 @@
     <fragment
         android:id="@+id/crearIncidenciaFragment"
         android:name="com.example.proyectoandroid.incidencias.CrearIncidenciaFragment"
-        android:label="@string/TituloCrearIncidencias"
+        android:label="@string/TituloCrearIncidencia"
         tools:layout="@layout/fragment_crear_incidencia" />
     <fragment
         android:id="@+id/verIncidenciasFragment"
         android:name="com.example.proyectoandroid.incidencias.adapter.VerIncidenciasFragment"
-        android:label="@string/TiuloMostrarincidencia"
+        android:label="@string/TituloMostrarIncidencia"
         tools:layout="@layout/fragment_ver_incidencias" />
 </navigation>
