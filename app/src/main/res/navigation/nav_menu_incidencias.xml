@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_menu_incidencias"
-    app:startDestination="@id/incidendiasFragment">
+    app:startDestination="@id/incidenciasFragment">
 
     <fragment
-        android:id="@+id/incidendiasFragment"
+        android:id="@+id/incidenciasFragment"
         android:name="com.example.proyectoandroid.incidencias.IncidendiasFragment"
         android:label="fragment_incidendias"
         tools:layout="@layout/fragment_incidendias" />
+    <fragment
+        android:id="@+id/crearIncidenciaFragment"
+        android:name="com.example.proyectoandroid.incidencias.CrearIncidenciaFragment"
+        android:label="fragment_crear_incidencia"
+        tools:layout="@layout/fragment_crear_incidencia" />
 </navigation>
