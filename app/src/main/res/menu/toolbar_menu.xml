@@ -9,7 +9,9 @@
             android:id="@+id/action_search"
             android:icon="@android:drawable/ic_menu_search"
             android:title="Search"
-            app:showAsAction="ifRoom"/>
+            app:actionViewClass="androidx.appcompat.widget.SearchView"
+            app:showAsAction="ifRoom"
+            />
 
 
 

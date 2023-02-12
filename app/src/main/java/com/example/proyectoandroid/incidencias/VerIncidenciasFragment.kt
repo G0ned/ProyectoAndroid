@@ -1,22 +1,26 @@
 package com.example.proyectoandroid.incidencias
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.example.proyectoandroid.R
+import com.example.proyectoandroid.databinding.FragmentVerIncidenciasBinding
 
+class VerIncidenciasFragment : Fragment() {
 
-class CrearIncidenciaFragment : Fragment() {
-
+    private  lateinit var binding : FragmentVerIncidenciasBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_crear_incidencia, container, false)
+
+
+       binding =   FragmentVerIncidenciasBinding.inflate(inflater, container, false)
+        return  binding.root
     }
 
 

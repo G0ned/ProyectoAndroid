@@ -3,26 +3,25 @@ package com.example.proyectoandroid.incidencias
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.onNavDestinationSelected
+
 import androidx.navigation.ui.setupWithNavController
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentMainIncidenasBinding
-import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import android.view.MenuInflater
-import androidx.navigation.NavHostController
+
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
+
 
 
 class MainIncidenasFragment : Fragment() {
 
-    private lateinit var binding : FragmentMainIncidenasBinding
+    private lateinit var binding: FragmentMainIncidenasBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
+
     }
 
 
@@ -32,33 +31,28 @@ class MainIncidenasFragment : Fragment() {
     ): View? {
 
 
-        binding =  FragmentMainIncidenasBinding.inflate(inflater, container, false)
+        binding = FragmentMainIncidenasBinding.inflate(inflater, container, false)
 
-        val toolBar =  binding.ToolbarIncidencias
+        val toolBar = binding.ToolbarIncidencias
         val NavView = binding.BottomNavigationViewIncidencias
-        val navHostFragment = childFragmentManager.findFragmentById(R.id.fragmentContainerViewMainMenuIncidencias) as NavHostFragment
+        val navHostFragment =
+            childFragmentManager.findFragmentById(R.id.fragmentContainerViewMainMenuIncidencias) as NavHostFragment
         val navController = navHostFragment.navController
         val builder = AppBarConfiguration.Builder(navController.graph)
-        val appBarConfiguration =  builder.build()
-        toolBar.setupWithNavController(navController,appBarConfiguration)
+        val appBarConfiguration = builder.build()
+        toolBar.setupWithNavController(navController, appBarConfiguration)
         NavView.setupWithNavController(navController)
-        return  binding.root
+        return binding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        binding.ToolbarIncidencias.inflateMenu(R.menu.toolbar_menu)
-
-
-    }
-
-
-
-
-
-
 
 }
+
+
+
+
+
+
+
 
 
 
