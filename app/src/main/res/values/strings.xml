@@ -4,4 +4,11 @@
     <string name="tag_incidencias">Incidencias</string>
     <string name="help">Help</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profesor_tag_str">Profesor</string>
+    <string name="descripcion_tag_str">Desc. Incidencia</string>
+    <string name="observaciones_tag_str">Observaciones</string>
+    <string name="codigo_equipo_tag_str">Cod. Equipo</string>
+    <string name="codigo_aula_tag_str">Cod. Aula</string>
+    <string name="crear_bton">Crear</string>
+    <string name="limpiar_bton">Limpiar</string>
 </resources>
