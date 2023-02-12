@@ -16,4 +16,7 @@
     <string name="codigo_aula_tag_str">Cod. Aula</string>
     <string name="crear_bton">Crear</string>
     <string name="limpiar_bton">Limpiar</string>
+    <string name="reservar_tag">Reservar</string>
+    <string name="modificar_tag">Modificar</string>
+    <string name="mantenimiento_tag">Mantenimiento</string>
 </resources>
