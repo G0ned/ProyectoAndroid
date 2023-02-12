@@ -6,37 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".reservas.CrearReservaFragment">
-
-    <Button
-        android:id="@+id/hora1"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="10dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/hora2"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
-    <Button
-        android:id="@+id/hora2"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="10dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/hora3"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
-    <Button
-        android:id="@+id/hora3"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="30dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
+    
     <TextView
         android:id="@+id/reservar_tag"
         android:layout_width="wrap_content"
@@ -45,19 +15,19 @@
         android:text="@string/reservar_tag"
         android:textAlignment="center"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/calendario_reservas"
+        app:layout_constraintBottom_toTopOf="@+id/sel_fecha_et"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19" />
 
-    <CalendarView
-        android:id="@+id/calendario_reservas"
-        android:layout_width="413dp"
-        android:layout_height="289dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+    <EditText
+        android:id="@+id/sel_fecha_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/AyudaFecha"
+        android:clickable="false"
+        android:focusable="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reservar_tag" />
 
@@ -67,56 +37,86 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:hint="@string/profesor_tag_str"
-        app:layout_constraintTop_toBottomOf="@+id/calendario_reservas"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sel_fecha_et" />
 
     <Spinner
         android:id="@+id/curso_grupo_spin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="76dp"
         app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:layout_editor_absoluteX="-1dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <Spinner
         android:id="@+id/aulas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@+id/curso_grupo_spin"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="18dp" />
 
     <Button
-        android:id="@+id/hora4"
+        android:id="@+id/hora1"
         android:layout_width="51dp"
         android:layout_height="45dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="12dp"
         android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/hora5"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
-    <Button
-        android:id="@+id/hora5"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="10dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/hora6"
+        app:layout_constraintEnd_toStartOf="@+id/hora2"
         app:layout_constraintTop_toBottomOf="@+id/aulas" />
 
     <Button
         android:id="@+id/hora6"
         android:layout_width="51dp"
         android:layout_height="45dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="8dp"
         android:text="Button"
         app:layout_constraintEnd_toStartOf="@+id/hora1"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
+
+    <Button
+        android:id="@+id/hora5"
+        android:layout_width="51dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="12dp"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/hora6"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
+
+    <Button
+        android:id="@+id/hora3"
+        android:layout_width="51dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="24dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
+
+    <Button
+        android:id="@+id/hora4"
+        android:layout_width="51dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="10dp"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/hora5"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
+
+    <Button
+        android:id="@+id/hora2"
+        android:layout_width="51dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="8dp"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/hora3"
         app:layout_constraintTop_toBottomOf="@+id/aulas" />
 
     <Button
