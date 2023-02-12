@@ -1,5 +1,6 @@
 package com.example.proyectoandroid.incidencias
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -12,7 +13,10 @@ import com.example.proyectoandroid.databinding.FragmentMainIncidenasBinding
 
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.setFragmentResultListener
+import androidx.fragment.app.viewModels
+import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasList
 
 
 class MainIncidenasFragment : Fragment() {
@@ -43,6 +47,46 @@ class MainIncidenasFragment : Fragment() {
         toolBar.setupWithNavController(navController, appBarConfiguration)
         NavView.setupWithNavController(navController)
         return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val toolbar = binding.ToolbarIncidencias
+
+        toolbar.inflateMenu(R.menu.toolbar_menu)
+
+        val buscador = toolbar.menu.findItem(R.id.action_search)
+        val searchView = buscador.actionView as SearchView
+
+
+        val incidenciasList : IncidenciasList by activityViewModels()
+
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+               query.let {
+
+               incidenciasList.list_Origen = incidenciasList.list_Origen.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(query.toString()) }
+
+
+               }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                newText.let {
+
+                    incidenciasList.list_Origen = incidenciasList.list_Origen.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(newText.toString()) }
+
+                }
+                return false
+            }
+
+
+        })
+
+
+
     }
 
 }

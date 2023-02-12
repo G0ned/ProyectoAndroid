@@ -19,10 +19,13 @@ class IncidenciasAdapter( private var incidencialist :List<Incidencias>, private
     override fun onBindViewHolder(holder: IncidenciasViewHolder, position: Int) {
        val item = incidencialist[position]
         holder.render(item,Listener)
+
+
     }
 
     fun update(incidencialist :List<Incidencias>) {
         this.incidencialist = incidencialist
+        notifyDataSetChanged()
     }
 
 
