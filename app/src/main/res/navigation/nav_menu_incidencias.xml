@@ -8,11 +8,16 @@
     <fragment
         android:id="@+id/incidenciasFragment"
         android:name="com.example.proyectoandroid.incidencias.IncidendiasFragment"
-        android:label="fragment_incidendias"
+        android:label="@string/TituloIncidencias"
         tools:layout="@layout/fragment_incidendias" />
     <fragment
         android:id="@+id/crearIncidenciaFragment"
         android:name="com.example.proyectoandroid.incidencias.CrearIncidenciaFragment"
-        android:label="fragment_crear_incidencia"
+        android:label="@string/TituloCrearIncidencias"
         tools:layout="@layout/fragment_crear_incidencia" />
+    <fragment
+        android:id="@+id/verIncidenciasFragment"
+        android:name="com.example.proyectoandroid.incidencias.adapter.VerIncidenciasFragment"
+        android:label="@string/TiuloMostrarincidencia"
+        tools:layout="@layout/fragment_ver_incidencias" />
 </navigation>

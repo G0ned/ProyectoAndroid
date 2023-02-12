@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:text="Un ejemplo"
+            android:hint="Escribe aqui tu nombre."
             android:textSize="16dp" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:layout_height="125dp"
             android:layout_marginBottom="30dp"
             android:inputType="text|textMultiLine"
-            android:text="Un ejemplo"
+            android:hint="Escribe aqui la descripcion del problema."
             android:textSize="16dp" />
 
         <TextView
@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:text="Un ejemplo"
+            android:hint="Introduce el codigo del equipo"
             android:textSize="16dp" />
 
         <TextView
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:text="Un ejemplo"
+            android:hint="Introduce el codigo del aula."
             android:textSize="16dp" />
 
 

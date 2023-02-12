@@ -34,9 +34,13 @@ class MainIncidenasFragment : Fragment() {
 
         binding =  FragmentMainIncidenasBinding.inflate(inflater, container, false)
 
+        val toolBar =  binding.ToolbarIncidencias
         val NavView = binding.BottomNavigationViewIncidencias
         val navHostFragment = childFragmentManager.findFragmentById(R.id.fragmentContainerViewMainMenuIncidencias) as NavHostFragment
         val navController = navHostFragment.navController
+        val builder = AppBarConfiguration.Builder(navController.graph)
+        val appBarConfiguration =  builder.build()
+        toolBar.setupWithNavController(navController,appBarConfiguration)
         NavView.setupWithNavController(navController)
         return  binding.root
     }
@@ -44,7 +48,6 @@ class MainIncidenasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         binding.ToolbarIncidencias.inflateMenu(R.menu.toolbar_menu)
-
 
 
     }
