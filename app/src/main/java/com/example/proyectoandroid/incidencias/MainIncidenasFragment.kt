@@ -13,6 +13,7 @@ import com.example.proyectoandroid.databinding.FragmentMainIncidenasBinding
 
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
@@ -22,6 +23,7 @@ import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasList
 class MainIncidenasFragment : Fragment() {
 
     private lateinit var binding: FragmentMainIncidenasBinding
+    private lateinit var toolbar  : Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,21 +39,21 @@ class MainIncidenasFragment : Fragment() {
 
         binding = FragmentMainIncidenasBinding.inflate(inflater, container, false)
 
-        val toolBar = binding.ToolbarIncidencias
+        toolbar = binding.ToolbarIncidencias
         val NavView = binding.BottomNavigationViewIncidencias
         val navHostFragment =
             childFragmentManager.findFragmentById(R.id.fragmentContainerViewMainMenuIncidencias) as NavHostFragment
         val navController = navHostFragment.navController
         val builder = AppBarConfiguration.Builder(navController.graph)
         val appBarConfiguration = builder.build()
-        toolBar.setupWithNavController(navController, appBarConfiguration)
+        toolbar.setupWithNavController(navController, appBarConfiguration)
         NavView.setupWithNavController(navController)
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val toolbar = binding.ToolbarIncidencias
+
 
         toolbar.inflateMenu(R.menu.toolbar_menu)
 
@@ -85,9 +87,16 @@ class MainIncidenasFragment : Fragment() {
 
         })
 
-
-
     }
+
+
+
+
+
+
+
+
+
 
 }
 
