@@ -9,7 +9,11 @@
         android:id="@+id/reservasLogInFragment"
         android:name="com.example.proyectoandroid.reservas.ReservasLogInFragment"
         android:label="fragment_reservas_log_in"
-        tools:layout="@layout/fragment_reservas_log_in" />
+        tools:layout="@layout/fragment_reservas_log_in" >
+        <action
+            android:id="@+id/action_reservasLogInFragment_to_crearReservaFragment"
+            app:destination="@id/crearReservaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/inicioFragment"
         android:name="com.example.proyectoandroid.InicioFragment"
@@ -27,4 +31,9 @@
         android:name="com.example.proyectoandroid.incidencias.MainIncidenasFragment"
         android:label="fragment_main_incidenas"
         tools:layout="@layout/fragment_main_incidenas" />
+    <fragment
+        android:id="@+id/crearReservaFragment"
+        android:name="com.example.proyectoandroid.reservas.CrearReservaFragment"
+        android:label="fragment_crear_reserva"
+        tools:layout="@layout/fragment_crear_reserva" />
 </navigation>
