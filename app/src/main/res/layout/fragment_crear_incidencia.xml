@@ -45,22 +45,38 @@
             android:textSize="16dp" />
 
         <TextView
-            android:id="@+id/observaciones_tag"
+            android:id="@+id/codequipo_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/observaciones_tag_str"
+            android:text="@string/codigo_equipo_tag_str"
             android:textSize="16dp"
             android:textStyle="bold"
             />
-
         <EditText
-            android:id="@+id/observaciones_content"
+            android:id="@+id/codigoequipo_content"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:inputType="text|textMultiLine"
             android:text="Un ejemplo"
             android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/codaula_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/codigo_equipo_tag_str"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/codigoaula_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="Un ejemplo"
+            android:textSize="16dp" />
+
+
 
         <LinearLayout
             android:layout_width="wrap_content"
