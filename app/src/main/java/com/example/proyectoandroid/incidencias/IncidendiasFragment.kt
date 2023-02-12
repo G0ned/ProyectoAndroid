@@ -20,9 +20,9 @@ class IncidendiasFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         binding = FragmentIncidendiasBinding.inflate(inflater,container,false)
+
         initRecyclerView()
         return  binding.root
     }

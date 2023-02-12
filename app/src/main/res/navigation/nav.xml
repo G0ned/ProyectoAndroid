@@ -6,11 +6,6 @@
     app:startDestination="@id/inicioFragment">
 
     <fragment
-        android:id="@+id/incidendiasFragment"
-        android:name="com.example.proyectoandroid.incidencias.IncidendiasFragment"
-        android:label="fragment_incidendias"
-        tools:layout="@layout/fragment_incidendias" />
-    <fragment
         android:id="@+id/reservasLogInFragment"
         android:name="com.example.proyectoandroid.reservas.ReservasLogInFragment"
         android:label="fragment_reservas_log_in"
@@ -24,7 +19,12 @@
             android:id="@+id/action_inicioFragment_to_reservasLogInFragment"
             app:destination="@id/reservasLogInFragment" />
         <action
-            android:id="@+id/action_inicioFragment_to_incidendiasFragment"
-            app:destination="@id/incidendiasFragment" />
+            android:id="@+id/action_inicioFragment_to_mainIncidenasFragment"
+            app:destination="@id/mainIncidenasFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mainIncidenasFragment"
+        android:name="com.example.proyectoandroid.incidencias.MainIncidenasFragment"
+        android:label="fragment_main_incidenas"
+        tools:layout="@layout/fragment_main_incidenas" />
 </navigation>

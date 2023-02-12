@@ -7,32 +7,33 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.*
 import androidx.navigation.findNavController
+import com.example.proyectoandroid.databinding.FragmentInicioBinding
 
 
 class InicioFragment : Fragment() {
 
+    private lateinit var binding : FragmentInicioBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
-         val view = inflater.inflate(R.layout.fragment_inicio, container, false)
 
-        val button_incidencias = view?.findViewById<Button>(R.id.incidencias_button)
-        val button_reservas =  view?.findViewById<Button>(R.id.reservas_button)
+         binding = FragmentInicioBinding.inflate(inflater, container, false)
 
-        button_incidencias?.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_inicioFragment_to_incidendiasFragment)
+
+
+        binding.incidenciasButton.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_inicioFragment_to_mainIncidenasFragment)
         }
 
-        button_reservas?.setOnClickListener {
+        binding.reservasButton.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_inicioFragment_to_reservasLogInFragment)
 
         }
 
-        return view
+        return binding.root
     }
 
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Incidencias"
+        android:icon="@android:drawable/ic_dialog_alert"
+        android:id="@+id/inboxFragment"
+        />
+    <item
+        android:title="Crear incidencias"
+        android:id="@+id/sentItemsFragment"
+        android:icon="@android:drawable/ic_menu_add"
+        />
+
+    <item
+        android:title="LogIn"
+        android:icon="@android:drawable/btn_star"
+        android:id="@+id/LoginAdmin"
+        />
+
+
+</menu>
