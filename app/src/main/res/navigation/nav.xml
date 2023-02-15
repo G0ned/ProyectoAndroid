@@ -6,25 +6,16 @@
     app:startDestination="@id/inicioFragment">
 
     <fragment
-        android:id="@+id/reservasLogInFragment"
-        android:name="com.example.proyectoandroid.reservas.ReservasLogInFragment"
-        android:label="fragment_reservas_log_in"
-        tools:layout="@layout/fragment_reservas_log_in" >
-        <action
-            android:id="@+id/action_reservasLogInFragment_to_crearReservaFragment"
-            app:destination="@id/crearReservaFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/inicioFragment"
         android:name="com.example.proyectoandroid.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
         <action
-            android:id="@+id/action_inicioFragment_to_reservasLogInFragment"
-            app:destination="@id/reservasLogInFragment" />
-        <action
             android:id="@+id/action_inicioFragment_to_mainIncidenasFragment"
             app:destination="@id/mainIncidenasFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_reservasMainMenuFragment"
+            app:destination="@id/reservasMainMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainIncidenasFragment"
@@ -32,8 +23,8 @@
         android:label="fragment_main_incidenas"
         tools:layout="@layout/fragment_main_incidenas" />
     <fragment
-        android:id="@+id/crearReservaFragment"
-        android:name="com.example.proyectoandroid.reservas.CrearReservaFragment"
-        android:label="fragment_crear_reserva"
-        tools:layout="@layout/fragment_crear_reserva" />
+        android:id="@+id/reservasMainMenuFragment"
+        android:name="com.example.proyectoandroid.reservas.reservasMainMenuFragment"
+        android:label="fragment_reservas_main_menu"
+        tools:layout="@layout/fragment_reservas_main_menu" />
 </navigation>

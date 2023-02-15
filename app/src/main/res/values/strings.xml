@@ -35,4 +35,6 @@
     <string name="h4">4º</string>
     <string name="h5">5º</string>
     <string name="h6">6º</string>
+    <string name="TituloLoginReservas">Login reservas</string>
+    <string name="TituloCrearReservas">Crear reservas</string>
 </resources>
