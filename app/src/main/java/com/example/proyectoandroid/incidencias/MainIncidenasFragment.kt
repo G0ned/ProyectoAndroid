@@ -67,9 +67,7 @@ class MainIncidenasFragment : Fragment() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                query.let {
-
-               incidenciasList.list_Origen = incidenciasList.list_Origen.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(query.toString()) }
-
+                   incidenciasList.list_Origen.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(query.toString()) }
 
                }
                 return false
