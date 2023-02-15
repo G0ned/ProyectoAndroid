@@ -21,10 +21,8 @@ class ReservasLogInFragment : Fragment() {
     ): View? {
 
         binding = FragmentReservasLogInBinding.inflate(inflater, container, false)
-        val campo_usuario = binding.editTextTextPersonName
-        val campo_contraseña = binding.editTextTextPassword
-        val boton_login = binding.button.setOnClickListener{
-            if (campo_usuario.text.toString()=="Usuario" && campo_contraseña.text.toString()=="123"){
+        binding.button.setOnClickListener{
+            if (binding.editTextTextPersonName.text.toString() =="Usuario" && binding.editTextTextPassword.text.toString()=="123"){
                 view?.findNavController()?.navigate(R.id.action_reservasLogInFragment_to_crearReservaFragment)
             }
             else{
