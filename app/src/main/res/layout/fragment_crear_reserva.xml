@@ -81,77 +81,89 @@
         android:id="@+id/hora1"
         android:layout_width="51dp"
         android:layout_height="45dp"
+        android:layout_marginTop="67dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="184dp"
-        android:text="@string/h1"
         android:backgroundTint="@color/instituto"
+        android:text="@string/h1"
         app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
         app:layout_constraintEnd_toStartOf="@+id/hora2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
 
     <Button
         android:id="@+id/hora2"
         android:layout_width="51dp"
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="67dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="184dp"
-        android:text="@string/h2"
         android:backgroundTint="@color/instituto"
+        android:text="@string/h2"
         app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
         app:layout_constraintEnd_toStartOf="@+id/hora3"
-        app:layout_constraintStart_toEndOf="@+id/hora1" />
+        app:layout_constraintStart_toEndOf="@+id/hora1"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
 
     <Button
         android:id="@+id/hora3"
         android:layout_width="51dp"
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="67dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="184dp"
-        android:text="@string/h3"
         android:backgroundTint="@color/instituto"
+        android:text="@string/h3"
         app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
         app:layout_constraintEnd_toStartOf="@+id/hora4"
-        app:layout_constraintStart_toEndOf="@+id/hora2" />
+        app:layout_constraintStart_toEndOf="@+id/hora2"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
 
     <Button
         android:id="@+id/hora4"
         android:layout_width="51dp"
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="67dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="184dp"
-        android:text="@string/h4"
         android:backgroundTint="@color/instituto"
+        android:text="@string/h4"
         app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
         app:layout_constraintEnd_toStartOf="@+id/hora5"
-        app:layout_constraintStart_toEndOf="@+id/hora3" />
+        app:layout_constraintStart_toEndOf="@+id/hora3"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
 
     <Button
         android:id="@+id/hora5"
         android:layout_width="51dp"
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="67dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="184dp"
-        android:text="@string/h5"
         android:backgroundTint="@color/instituto"
+        android:text="@string/h5"
         app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
         app:layout_constraintEnd_toStartOf="@+id/hora6"
-        app:layout_constraintStart_toEndOf="@+id/hora4" />
+        app:layout_constraintStart_toEndOf="@+id/hora4"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
 
     <Button
         android:id="@+id/hora6"
         android:layout_width="51dp"
         android:layout_height="45dp"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="67dp"
         android:layout_marginBottom="184dp"
-        android:text="@string/h6"
         android:backgroundTint="@color/instituto"
+        android:text="@string/h6"
         app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/hora5" />
+        app:layout_constraintStart_toEndOf="@+id/hora5"
+        app:layout_constraintTop_toBottomOf="@+id/aulas" />
 
 
     <Button
@@ -159,10 +171,10 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="132dp"
+        android:backgroundTint="@color/instituto"
         android:hint="@string/reservar_tag"
         android:textColorHint="@color/white"
-        android:backgroundTint="@color/instituto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/modificar_btn"
         app:layout_constraintStart_toStartOf="parent" />
@@ -173,10 +185,10 @@
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="132dp"
+        android:backgroundTint="@color/instituto"
         android:hint="@string/modificar_tag"
         android:textColorHint="@color/white"
-        android:backgroundTint="@color/instituto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/mantenimiento_btn"
         app:layout_constraintStart_toEndOf="@+id/reservar_btn" />
@@ -186,10 +198,10 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="132dp"
+        android:backgroundTint="@color/instituto"
         android:hint="@string/mantenimiento_tag"
         android:textColorHint="@color/white"
-        android:backgroundTint="@color/instituto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/modificar_btn" />
