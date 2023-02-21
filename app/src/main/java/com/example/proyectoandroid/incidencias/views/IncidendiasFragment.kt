@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -51,9 +53,14 @@ class IncidendiasFragment : Fragment() {
     }
 
     fun goToFullObject( incidencias: Incidencias) {
+        Toast.makeText(context,incidencias.profesor, Toast.LENGTH_SHORT).show()
+        val bundle = bundleOf(
+            "profesor" to incidencias.profesor,
+            "descripcion" to incidencias.descripcion,
+            "fecha" to  incidencias.fecha
 
-        incidenciasViewModel.incidencia.value = incidencias
-        view?.findNavController()?.navigate(R.id.action_incidenciasFragment_to_verIncidenciasFragment)
+        )
+        view?.findNavController()?.navigate(R.id.action_incidenciasFragment_to_verIncidenciasFragment, args = bundle)
 
     }
 

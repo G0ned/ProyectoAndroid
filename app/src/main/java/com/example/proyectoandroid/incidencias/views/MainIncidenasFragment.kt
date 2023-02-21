@@ -19,6 +19,7 @@ class MainIncidenasFragment : Fragment() {
 
     private lateinit var binding: FragmentMainIncidenasBinding
     private lateinit var toolbar  : Toolbar
+    private val incidenciasViewModel : IncidenciasViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +51,7 @@ class MainIncidenasFragment : Fragment() {
         val searchView = buscador.actionView as SearchView
 
 
-        val incidenciasViewModel : IncidenciasViewModel by viewModels()
+
 
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -65,7 +66,7 @@ class MainIncidenasFragment : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText.let {
 
-                    incidenciasViewModel.listaIncidencias.value?.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(newText.toString()) }
+                    incidenciasViewModel.listaIncidencias.value = incidenciasViewModel.listaIncidencias.value?.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(newText.toString()) }
 
                 }
                 return false
