@@ -36,6 +36,7 @@ class IncidendiasFragment : Fragment() {
 
     }
 
+    //metodo que inicializa los elementos del recyclerview siempre que la lista "listaIncidencia" del viewmodels es modificado.
     private fun initRecyclerView(){
 
         incidenciasViewModel.listaIncidencias.observe(viewLifecycleOwner, Observer {
@@ -52,6 +53,9 @@ class IncidendiasFragment : Fragment() {
 
     }
 
+
+
+    //metodo  que envia la información del item selecionado al fragmento de verIncidenciasFragment.
     fun goToFullObject( incidencias: Incidencias) {
         Toast.makeText(context,incidencias.profesor, Toast.LENGTH_SHORT).show()
         val bundle = bundleOf(
