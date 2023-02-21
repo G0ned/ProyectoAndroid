@@ -66,7 +66,7 @@ class MainIncidenasFragment : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText.let {
 
-                    incidenciasViewModel.listaIncidencias.value = incidenciasViewModel.listaIncidencias.value?.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(newText.toString()) }
+                    incidenciasViewModel.listaIncidencias.value?.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(newText.toString()) }
 
                 }
                 return false

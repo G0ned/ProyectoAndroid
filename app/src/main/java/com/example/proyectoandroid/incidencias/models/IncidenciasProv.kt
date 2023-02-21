@@ -2,7 +2,13 @@ package com.example.proyectoandroid.incidencias.models
 
 class IncidenciasProv {
     companion object{
-        val incidenciasList= listOf(
+
+        fun addIncidencia(incidencia : Incidencias) {
+            incidenciasList.add(incidencia)
+        }
+
+
+        var incidenciasList= mutableListOf(
             Incidencias(
                 "11/02/2023",
                 "Reinaldo",

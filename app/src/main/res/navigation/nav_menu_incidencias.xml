@@ -18,7 +18,11 @@
         android:id="@+id/crearIncidenciaFragment"
         android:name="com.example.proyectoandroid.incidencias.views.CrearIncidenciaFragment"
         android:label="@string/TituloCrearIncidencia"
-        tools:layout="@layout/fragment_crear_incidencia" />
+        tools:layout="@layout/fragment_crear_incidencia" >
+        <action
+            android:id="@+id/action_crearIncidenciaFragment_to_incidenciasFragment"
+            app:destination="@id/incidenciasFragment" />
+    </fragment>
     <fragment
         android:id="@+id/verIncidenciasFragment"
         android:name="com.example.proyectoandroid.incidencias.views.VerIncidenciasFragment"

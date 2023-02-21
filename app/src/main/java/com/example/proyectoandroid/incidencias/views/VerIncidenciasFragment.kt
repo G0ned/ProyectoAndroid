@@ -35,10 +35,7 @@ class VerIncidenciasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
        binding =   FragmentVerIncidenciasBinding.inflate(inflater, container, false)
-
         setData(incidencia)
-
-
         return  binding.root
     }
 

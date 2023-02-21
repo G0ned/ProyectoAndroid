@@ -40,7 +40,7 @@ class IncidendiasFragment : Fragment() {
 
         incidenciasViewModel.listaIncidencias.observe(viewLifecycleOwner, Observer {
             val manager = LinearLayoutManager(context)
-            val adapter = IncidenciasAdapter(incidenciasViewModel.listaIncidencias.value ?: emptyList()) {
+            val adapter = IncidenciasAdapter(incidenciasViewModel.listaIncidencias.value?.toList() ?: emptyList()) {
                     incidencia -> goToFullObject(incidencia)
             }
             val decoration = DividerItemDecoration(context,manager.orientation)
