@@ -1,5 +1,6 @@
 package com.example.proyectoandroid.incidencias.views.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -21,12 +22,9 @@ class IncidenciasAdapter(private var incidencialist :List<Incidencias>, private 
         holder.render(item,Listener)
 
 
+
     }
 
-    fun update(incidencialist :List<Incidencias>) {
-        this.incidencialist = incidencialist
-        notifyDataSetChanged()
-    }
 
 
 }

@@ -19,6 +19,7 @@ import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasViewModel
 class IncidendiasFragment : Fragment() {
 
     private lateinit var binding: FragmentIncidendiasBinding
+    val incidenciasViewModel :IncidenciasViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,6 +27,7 @@ class IncidendiasFragment : Fragment() {
     ): View? {
 
         binding = FragmentIncidendiasBinding.inflate(inflater,container,false)
+        incidenciasViewModel.getIncidencias()
         initRecyclerView()
         return  binding.root
 
@@ -34,14 +36,10 @@ class IncidendiasFragment : Fragment() {
 
     private fun initRecyclerView(){
 
-        val incidenciasViewModel :IncidenciasViewModel by viewModels()
-
-        incidenciasViewModel.getIncidencias()
-
         incidenciasViewModel.listaIncidencias.observe(viewLifecycleOwner, Observer {
             val manager = LinearLayoutManager(context)
             val adapter = IncidenciasAdapter(incidenciasViewModel.listaIncidencias.value ?: emptyList()) {
-                    incidencias -> goToFullObject(incidencias)
+                    incidencia -> goToFullObject(incidencia)
             }
             val decoration = DividerItemDecoration(context,manager.orientation)
             binding.recyclerview.layoutManager=  manager
@@ -53,6 +51,8 @@ class IncidendiasFragment : Fragment() {
     }
 
     fun goToFullObject( incidencias: Incidencias) {
+
+        incidenciasViewModel.incidencia.value = incidencias
         view?.findNavController()?.navigate(R.id.action_incidenciasFragment_to_verIncidenciasFragment)
 
     }

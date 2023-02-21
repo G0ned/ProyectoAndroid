@@ -5,14 +5,11 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-
 import androidx.navigation.ui.setupWithNavController
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentMainIncidenasBinding
-
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.example.proyectoandroid.incidencias.models.Incidencias
 import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasViewModel
