@@ -1,4 +1,4 @@
-package com.example.proyectoandroid.reservas
+package com.example.proyectoandroid.reservas.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

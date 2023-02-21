@@ -1,4 +1,4 @@
-package com.example.proyectoandroid.incidencias
+package com.example.proyectoandroid.incidencias.views
 
 import android.os.Bundle
 import android.view.LayoutInflater

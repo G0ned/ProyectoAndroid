@@ -1,8 +1,8 @@
-package com.example.proyectoandroid.incidencias
+package com.example.proyectoandroid.incidencias.models
 
 class IncidenciasProv {
     companion object{
-        val incidenciasList= listOf<Incidencias>(
+        val incidenciasList= listOf(
             Incidencias(
                 "11/02/2023",
                 "Reinaldo",
@@ -28,7 +28,7 @@ class IncidenciasProv {
                 "10/02/2023",
                 "Rayco",
                 "Un ordenador no enciende"
-            ),Incidencias(
+            ), Incidencias(
                 "10/02/2023",
                 "Rayco",
                 "Un ordenador no enciende"

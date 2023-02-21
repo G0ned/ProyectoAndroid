@@ -1,7 +1,7 @@
 package com.example.proyectoandroid.incidencias.viewmodels
 
 import androidx.lifecycle.ViewModel
-import com.example.proyectoandroid.incidencias.Incidencias
+import com.example.proyectoandroid.incidencias.models.Incidencias
 
 class IncidenciasList : ViewModel() {
 

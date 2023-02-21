@@ -1,12 +1,12 @@
-package com.example.proyectoandroid
+package com.example.proyectoandroid.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.*
 import androidx.navigation.findNavController
+import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentInicioBinding
 
 

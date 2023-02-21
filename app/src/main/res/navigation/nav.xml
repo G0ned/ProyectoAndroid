@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/inicioFragment"
-        android:name="com.example.proyectoandroid.InicioFragment"
+        android:name="com.example.proyectoandroid.main.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/mainIncidenasFragment"
-        android:name="com.example.proyectoandroid.incidencias.MainIncidenasFragment"
+        android:name="com.example.proyectoandroid.incidencias.views.MainIncidenasFragment"
         android:label="fragment_main_incidenas"
         tools:layout="@layout/fragment_main_incidenas" />
     <fragment
         android:id="@+id/reservasMainMenuFragment"
-        android:name="com.example.proyectoandroid.reservas.reservasMainMenuFragment"
+        android:name="com.example.proyectoandroid.reservas.views.reservasMainMenuFragment"
         android:label="fragment_reservas_main_menu"
         tools:layout="@layout/fragment_reservas_main_menu" />
 </navigation>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/reservasLogInFragment"
-        android:name="com.example.proyectoandroid.reservas.ReservasLogInFragment"
+        android:name="com.example.proyectoandroid.reservas.views.ReservasLogInFragment"
         android:label="@string/TituloLoginReservas"
         tools:layout="@layout/fragment_reservas_log_in">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/crearReservaFragment"
-        android:name="com.example.proyectoandroid.reservas.CrearReservaFragment"
+        android:name="com.example.proyectoandroid.reservas.views.CrearReservaFragment"
         android:label="@string/TituloCrearReservas"
         tools:layout="@layout/fragment_crear_reserva" />
 </navigation>
