@@ -5,21 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentIncidendiasBinding
 import com.example.proyectoandroid.incidencias.models.Incidencias
-import com.example.proyectoandroid.incidencias.models.IncidenciasProv
 import com.example.proyectoandroid.incidencias.views.adapter.IncidenciasAdapter
-import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasList
+import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasViewModel
 
 class IncidendiasFragment : Fragment() {
 
     private lateinit var binding: FragmentIncidendiasBinding
-    private var IncidenciasList : List<Incidencias> = IncidenciasProv.incidenciasList
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,27 +33,27 @@ class IncidendiasFragment : Fragment() {
     }
 
     private fun initRecyclerView(){
-        val manager = LinearLayoutManager(context)
-        val adapter = IncidenciasAdapter(IncidenciasList) {
-                incidencias -> goToFullObject(incidencias)
-        }
-        val decoration = DividerItemDecoration(context,manager.orientation)
-        binding.recyclerview.layoutManager=  manager
-        binding.recyclerview.adapter = adapter
-        binding.recyclerview.addItemDecoration(decoration)
 
+        val incidenciasViewModel :IncidenciasViewModel by viewModels()
 
+        incidenciasViewModel.getIncidencias()
 
-        val incidenciasList : IncidenciasList by activityViewModels()
-        incidenciasList.list_Origen = IncidenciasList
+        incidenciasViewModel.listaIncidencias.observe(viewLifecycleOwner, Observer {
+            val manager = LinearLayoutManager(context)
+            val adapter = IncidenciasAdapter(incidenciasViewModel.listaIncidencias.value ?: emptyList()) {
+                    incidencias -> goToFullObject(incidencias)
+            }
+            val decoration = DividerItemDecoration(context,manager.orientation)
+            binding.recyclerview.layoutManager=  manager
+            binding.recyclerview.adapter = adapter
+            binding.recyclerview.addItemDecoration(decoration)
+        })
 
-        adapter.update(incidenciasList.list_Origen)
 
     }
 
     fun goToFullObject( incidencias: Incidencias) {
         view?.findNavController()?.navigate(R.id.action_incidenciasFragment_to_verIncidenciasFragment)
-
 
     }
 

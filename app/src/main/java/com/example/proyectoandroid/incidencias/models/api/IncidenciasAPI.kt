@@ -1,4 +1,4 @@
-package com.example.proyectoandroid.incidencias.api
+package com.example.proyectoandroid.incidencias.models.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -13,20 +13,15 @@ import com.example.proyectoandroid.databinding.FragmentMainIncidenasBinding
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.example.proyectoandroid.incidencias.models.Incidencias
-import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasList
+import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasViewModel
 
 
 class MainIncidenasFragment : Fragment() {
 
     private lateinit var binding: FragmentMainIncidenasBinding
     private lateinit var toolbar  : Toolbar
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,13 +53,13 @@ class MainIncidenasFragment : Fragment() {
         val searchView = buscador.actionView as SearchView
 
 
-        val incidenciasList : IncidenciasList by activityViewModels()
+        val incidenciasViewModel : IncidenciasViewModel by viewModels()
 
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                query.let {
-                   incidenciasList.list_Origen.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(query.toString()) }
+                   incidenciasViewModel.listaIncidencias.value?.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(query.toString()) }
 
                }
                 return false
@@ -73,7 +68,7 @@ class MainIncidenasFragment : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText.let {
 
-                    incidenciasList.list_Origen = incidenciasList.list_Origen.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(newText.toString()) }
+                    incidenciasViewModel.listaIncidencias.value?.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(newText.toString()) }
 
                 }
                 return false
