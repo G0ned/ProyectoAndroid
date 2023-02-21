@@ -36,7 +36,7 @@ class IncidendiasFragment : Fragment() {
 
     }
 
-    //metodo que inicializa los elementos del recyclerview siempre que la lista "listaIncidencia" del viewmodels es modificado.
+    //metodo que inicializa los elementos del recyclerview siempre que la lista "listaIncidencia" del viewmodels es modificada.
     private fun initRecyclerView(){
 
         incidenciasViewModel.listaIncidencias.observe(viewLifecycleOwner, Observer {
