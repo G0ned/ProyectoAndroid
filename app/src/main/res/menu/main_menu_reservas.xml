@@ -8,7 +8,7 @@
         />
 
     <item
-        android:title="Tus reservas"
+        android:title="Mis reservas"
         android:icon="@android:drawable/ic_menu_agenda"
         android:id="@+id/incidenciasFragment"
         />
