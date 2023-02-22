@@ -3,17 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main_menu_reservas"
-    app:startDestination="@id/reservasLogInFragment">
+    app:startDestination="@id/crearReservaFragment">
 
-    <fragment
-        android:id="@+id/reservasLogInFragment"
-        android:name="com.example.proyectoandroid.reservas.views.ReservasLogInFragment"
-        android:label="@string/TituloLoginReservas"
-        tools:layout="@layout/fragment_reservas_log_in">
-        <action
-            android:id="@+id/action_reservasLogInFragment2_to_crearReservaFragment2"
-            app:destination="@id/crearReservaFragment" />
-    </fragment>
     <fragment
         android:id="@+id/crearReservaFragment"
         android:name="com.example.proyectoandroid.reservas.views.CrearReservaFragment"

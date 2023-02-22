@@ -23,7 +23,7 @@ class ReservasLogInFragment : Fragment() {
         binding = FragmentReservasLogInBinding.inflate(inflater, container, false)
         binding.button.setOnClickListener{
             if (binding.editTextTextPersonName.text.toString() =="Usuario" && binding.editTextTextPassword.text.toString()=="123"){
-                view?.findNavController()?.navigate(R.id.action_reservasLogInFragment2_to_crearReservaFragment2)
+                view?.findNavController()?.navigate(R.id.action_reservasLogInFragment_to_reservasMainMenuFragment)
             }
             else{
                 Toast.makeText(context, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".reservas.views.CrearReservaFragment">
 
     <TextView
@@ -14,10 +15,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/reservar_grande"
-        android:textSize="30sp"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/sel_fecha_et"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/sel_fecha_et"
@@ -26,18 +25,14 @@
         android:layout_marginTop="16dp"
         android:clickable="false"
         android:focusable="false"
-        android:hint="@string/AyudaFecha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reservar_tag" />
+        android:hint="@string/AyudaFecha" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:hint="@string/profesor_tag_str"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sel_fecha_et" />
+        android:hint="@string/profesor_tag_str" />
 
     <TextView
         android:id="@+id/et_cursogrupo"
@@ -45,18 +40,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
-        android:hint="@string/curso_grupo_tag_str"
-        app:layout_constraintBottom_toTopOf="@+id/curso_grupo_spin"
-        app:layout_constraintTop_toBottomOf="@+id/editText"
-        tools:layout_editor_absoluteX="-9dp" />
+        android:hint="@string/curso_grupo_tag_str" />
 
     <Spinner
         android:id="@+id/curso_grupo_spin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/et_cursogrupo"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/et_auloa"
@@ -64,147 +54,107 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/aula_tag_str"
-        app:layout_constraintBottom_toTopOf="@+id/aulas"
-        app:layout_constraintTop_toBottomOf="@+id/curso_grupo_spin"
-        tools:layout_editor_absoluteX="0dp" />
+        android:text="@string/aula_tag_str" />
 
     <Spinner
         android:id="@+id/aulas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/et_auloa"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_marginTop="8dp" />
 
-    <Button
-        android:id="@+id/hora1"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/instituto"
-        android:text="@string/h1"
-        app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
-        app:layout_constraintEnd_toStartOf="@+id/hora2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
-    <Button
-        android:id="@+id/hora2"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/instituto"
-        android:text="@string/h2"
-        app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
-        app:layout_constraintEnd_toStartOf="@+id/hora3"
-        app:layout_constraintStart_toEndOf="@+id/hora1"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
-    <Button
-        android:id="@+id/hora3"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/instituto"
-        android:text="@string/h3"
-        app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
-        app:layout_constraintEnd_toStartOf="@+id/hora4"
-        app:layout_constraintStart_toEndOf="@+id/hora2"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
-    <Button
-        android:id="@+id/hora4"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/instituto"
-        android:text="@string/h4"
-        app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
-        app:layout_constraintEnd_toStartOf="@+id/hora5"
-        app:layout_constraintStart_toEndOf="@+id/hora3"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
-    <Button
-        android:id="@+id/hora5"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/instituto"
-        android:text="@string/h5"
-        app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
-        app:layout_constraintEnd_toStartOf="@+id/hora6"
-        app:layout_constraintStart_toEndOf="@+id/hora4"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
-
-    <Button
-        android:id="@+id/hora6"
-        android:layout_width="51dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="67dp"
-        android:layout_marginBottom="184dp"
-        android:backgroundTint="@color/instituto"
-        android:text="@string/h6"
-        app:layout_constraintBottom_toTopOf="@+id/modificar_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/hora5"
-        app:layout_constraintTop_toBottomOf="@+id/aulas" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
 
 
-    <Button
-        android:id="@+id/reservar_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="132dp"
-        android:backgroundTint="@color/instituto"
-        android:hint="@string/reservar_tag"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/modificar_btn"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/hora1"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/instituto"
+            android:text="@string/h1" />
 
-    <Button
-        android:id="@+id/modificar_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="132dp"
-        android:backgroundTint="@color/instituto"
-        android:hint="@string/modificar_tag"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/mantenimiento_btn"
-        app:layout_constraintStart_toEndOf="@+id/reservar_btn" />
+        <Button
+            android:id="@+id/hora2"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/instituto"
+            android:text="@string/h2" />
 
-    <Button
-        android:id="@+id/mantenimiento_btn"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="132dp"
-        android:backgroundTint="@color/instituto"
-        android:hint="@string/mantenimiento_tag"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/modificar_btn" />
+        <Button
+            android:id="@+id/hora3"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/instituto"
+            android:text="@string/h3" />
+
+        <Button
+            android:id="@+id/hora4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/instituto"
+            android:text="@string/h4" />
+
+        <Button
+            android:id="@+id/hora5"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/instituto"
+            android:text="@string/h5" />
+
+        <Button
+            android:id="@+id/hora6"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/instituto"
+            android:text="@string/h6" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/reservar_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/instituto"
+            android:hint="@string/reservar_tag"
+            android:textColorHint="@color/white" />
+
+        <Button
+            android:id="@+id/modificar_btn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/instituto"
+            android:hint="@string/limpiar_tag"
+            android:textColorHint="@color/white" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

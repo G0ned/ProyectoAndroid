@@ -21,7 +21,7 @@
     <string name="limpiar_bton">Limpiar</string>
     <string name="reservar_grande">Reservar</string>
     <string name="reservar_tag"><font size="12">Reservar</font></string>
-    <string name="modificar_tag"><font size="12">Modificar</font></string>
+    <string name="limpiar_tag"><font size="12">Limpiar</font></string>
     <string name="mantenimiento_tag"><font size="11">Activar mantenimiento</font></string>
     <string name="TituloIncidencias">Incidencias</string>
     <string name="TituloMostrarIncidencia">Mostrar incidencia</string>

@@ -29,7 +29,7 @@ class InicioFragment : Fragment() {
         }
 
         binding.reservasButton.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_inicioFragment_to_reservasMainMenuFragment)
+            view?.findNavController()?.navigate(R.id.action_inicioFragment_to_reservasLogInFragment)
 
         }
 

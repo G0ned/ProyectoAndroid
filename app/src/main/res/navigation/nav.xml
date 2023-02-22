@@ -14,8 +14,8 @@
             android:id="@+id/action_inicioFragment_to_mainIncidenasFragment"
             app:destination="@id/mainIncidenasFragment" />
         <action
-            android:id="@+id/action_inicioFragment_to_reservasMainMenuFragment"
-            app:destination="@id/reservasMainMenuFragment" />
+            android:id="@+id/action_inicioFragment_to_reservasLogInFragment"
+            app:destination="@id/reservasLogInFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainIncidenasFragment"
@@ -27,4 +27,13 @@
         android:name="com.example.proyectoandroid.reservas.views.reservasMainMenuFragment"
         android:label="fragment_reservas_main_menu"
         tools:layout="@layout/fragment_reservas_main_menu" />
+    <fragment
+        android:id="@+id/reservasLogInFragment"
+        android:name="com.example.proyectoandroid.reservas.views.ReservasLogInFragment"
+        android:label="fragment_reservas_log_in"
+        tools:layout="@layout/fragment_reservas_log_in" >
+        <action
+            android:id="@+id/action_reservasLogInFragment_to_reservasMainMenuFragment"
+            app:destination="@id/reservasMainMenuFragment" />
+    </fragment>
 </navigation>
