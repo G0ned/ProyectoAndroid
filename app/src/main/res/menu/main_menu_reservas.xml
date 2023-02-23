@@ -10,7 +10,7 @@
     <item
         android:title="Mis reservas"
         android:icon="@android:drawable/ic_menu_agenda"
-        android:id="@+id/incidenciasFragment"
+        android:id="@+id/misReservasFragment"
         />
 
 

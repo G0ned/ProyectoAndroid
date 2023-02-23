@@ -10,4 +10,9 @@
         android:name="com.example.proyectoandroid.reservas.views.CrearReservaFragment"
         android:label="@string/TituloCrearReservas"
         tools:layout="@layout/fragment_crear_reserva" />
+    <fragment
+        android:id="@+id/misReservasFragment"
+        android:name="com.example.proyectoandroid.reservas.views.MisReservasFragment"
+        android:label="@string/TituloMisReservas"
+        tools:layout="@layout/fragment_mis_reservas" />
 </navigation>

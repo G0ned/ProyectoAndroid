@@ -1,5 +1,6 @@
 package com.example.proyectoandroid.incidencias.models
 
+// clase que se encarga de proveernos datos de prueba y donde guardamos las incidencias nuevas...
 class IncidenciasProv {
     companion object{
 
