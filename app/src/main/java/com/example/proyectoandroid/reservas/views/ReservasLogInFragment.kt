@@ -13,6 +13,7 @@ import com.example.proyectoandroid.databinding.FragmentReservasLogInBinding
 
 class ReservasLogInFragment : Fragment() {
 
+    //referencia para el archivo xml -> fragmento_reservas_log_im.xml en la carpeta layout
     private lateinit var binding: FragmentReservasLogInBinding
 
     override fun onCreateView(
@@ -22,6 +23,7 @@ class ReservasLogInFragment : Fragment() {
 
         binding = FragmentReservasLogInBinding.inflate(inflater, container, false)
         binding.button.setOnClickListener{
+            //valida el campo de usuarios si es correcto manda al usuario al otro fragmento.
             if (binding.editTextTextPersonName.text.toString() =="Usuario" && binding.editTextTextPassword.text.toString()=="123"){
                 view?.findNavController()?.navigate(R.id.action_reservasLogInFragment_to_reservasMainMenuFragment)
             }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.reservas.models.Reservas
 
+//adaptador para el recycler view del archivo xml -> fragment_mis_reservas.
 class ReservasAdapter(private var reservasList : List<Reservas>, private  val Listener : (Reservas) -> Unit ):RecyclerView.Adapter<ReservasViewHolder>() {
 
     override fun getItemCount(): Int = reservasList.size

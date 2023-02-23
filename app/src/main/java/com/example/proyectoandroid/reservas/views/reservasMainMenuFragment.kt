@@ -15,9 +15,13 @@ import com.example.proyectoandroid.databinding.FragmentReservasMainMenuBinding
 
 class reservasMainMenuFragment : Fragment() {
 
+    // referencia del archivo xml -> fragment_reservas_main_menu.xml en la carpeta layout
     private lateinit var binding : FragmentReservasMainMenuBinding
+    // referencia del archivo xml -> toolbar_menu_reservas.xml en la carpeta menu.
     private lateinit var toolbar : Toolbar
 
+
+    // Al crear la vista se monta el navView y el toolBar en la interfaz del recycler view.
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

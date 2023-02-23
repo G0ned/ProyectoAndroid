@@ -18,7 +18,10 @@ import com.example.proyectoandroid.reservas.views.adapter.ReservasAdapter
 
 class MisReservasFragment : Fragment() {
 
+    // referencia del archivo xml -> fragment_mis_reservas en la carpeta layout.
     private lateinit var  binding :  FragmentMisReservasBinding
+
+    // referencia del viewModel creado en el fichero ReservasViewModels
     val reservasViewModelView : ReservasViewModel by viewModels()
 
 
@@ -32,22 +35,24 @@ class MisReservasFragment : Fragment() {
         return binding.root
     }
 
-
+    //inicializa el recyclerView de reservas.
     private fun InitRecyclerView() {
 
         reservasViewModelView.listaReservas.observe(viewLifecycleOwner, Observer {
             val manager = LinearLayoutManager(context)
-            val adapter = ReservasAdapter(reservasViewModelView.listaReservas.value?.toList() ?: emptyList()) {
+            val adapter = ReservasAdapter(reservasViewModelView.listaReservas.value?.toList() ?: emptyList()) // ?: si la lista del viewmodel retorna null, envia una lista vacia.
+            {
                 reserva -> GoTofullReservas(reserva)
             }
-            val decoration = DividerItemDecoration(context, manager.orientation)
-            binding.recyclerviewMisReservas.layoutManager = manager
-            binding.recyclerviewMisReservas.adapter = adapter
-            binding.recyclerviewMisReservas.addItemDecoration(decoration)
+            val decoration = DividerItemDecoration(context, manager.orientation) //crea la decoración que va ha separar los items.
+            binding.recyclerviewMisReservas.layoutManager = manager // añade el manager al recycler view.
+            binding.recyclerviewMisReservas.adapter = adapter //añade el adapter al recycler view.
+            binding.recyclerviewMisReservas.addItemDecoration(decoration) // añade la decoración que va ha separar los items.
         })
 
     }
 
+    // función para ver toda la información en otro fragmento.
     private  fun GoTofullReservas(reserva : Reservas) {
 
 

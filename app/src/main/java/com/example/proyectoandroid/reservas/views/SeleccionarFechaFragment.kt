@@ -12,10 +12,12 @@ class SeleccionarFechaFragment (val listener: (day: Int, month: Int, year:Int)->
     DatePickerDialog.OnDateSetListener {
 
 
+    //método que añade la  añade la fecha al campo.
     override fun onDateSet(p0: DatePicker?, sel_day: Int, sel_month: Int, sel_year: Int) {
         listener(sel_day,sel_month,sel_year)
     }
 
+    // que añade el limite de min de dias y max de dias de la reserva.
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val calendario = Calendar.getInstance()

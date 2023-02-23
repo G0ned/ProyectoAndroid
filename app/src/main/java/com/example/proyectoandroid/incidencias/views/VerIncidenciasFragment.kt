@@ -13,6 +13,7 @@ import com.example.proyectoandroid.databinding.FragmentVerIncidenciasBinding
 import com.example.proyectoandroid.incidencias.models.Incidencias
 import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasViewModel
 
+
 class VerIncidenciasFragment : Fragment() {
 
     private  lateinit var binding : FragmentVerIncidenciasBinding
@@ -20,16 +21,17 @@ class VerIncidenciasFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // se recogen los parametros que se envian al cambiar de fragmento en el archivo -> IncidenciasFragment en el método de goToFullObject.
         arguments?.let {
            incidencia = Incidencias(
                it.getString("fecha").toString(),
                it.getString("profesor").toString(),
                it.getString("descripcion").toString()
            )
-
         }
     }
-
+    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,6 +41,7 @@ class VerIncidenciasFragment : Fragment() {
         return  binding.root
     }
 
+    // distribuye la información obtenida por el bundle a sus campos correspondientes.
     private fun setData(incidencia : Incidencias) {
         binding.profesorIncContent.text = incidencia.profesor
         binding.descIncContent.text = incidencia.descripcion

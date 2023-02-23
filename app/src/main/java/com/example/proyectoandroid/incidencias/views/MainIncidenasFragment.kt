@@ -29,7 +29,6 @@ class MainIncidenasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         binding = FragmentMainIncidenasBinding.inflate(inflater, container, false)
 
         toolbar = binding.ToolbarIncidencias
