@@ -16,9 +16,12 @@ import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasViewModel
 
 
 class MainIncidenasFragment : Fragment() {
-
+    // referencia a cualquier objeto del xml -> fragment_main_incidencias.xml en la carpeta layout.
     private lateinit var binding: FragmentMainIncidenasBinding
+    // referencia de la toolbar de incidencias del xml -> toolbar_menu.xml en l carpeta menu.
     private lateinit var toolbar  : Toolbar
+
+    // referencia al viewModels
     private val incidenciasViewModel : IncidenciasViewModel by viewModels()
 
     override fun onCreateView(
@@ -31,9 +34,12 @@ class MainIncidenasFragment : Fragment() {
 
         toolbar = binding.ToolbarIncidencias
         val NavView = binding.BottomNavigationViewIncidencias
+        //obtiene la referencias del NavHostFragment
         val navHostFragment =
             childFragmentManager.findFragmentById(R.id.fragmentContainerViewMainMenuIncidencias) as NavHostFragment
+        // obtiene la referencia del navController
         val navController = navHostFragment.navController
+        // construye la configuración de la app bar
         val builder = AppBarConfiguration.Builder(navController.graph)
         val appBarConfiguration = builder.build()
         toolbar.setupWithNavController(navController, appBarConfiguration)
@@ -47,13 +53,14 @@ class MainIncidenasFragment : Fragment() {
 
         toolbar.inflateMenu(R.menu.toolbar_menu)
 
+        // referencia del search view  del tool bar.
         val buscador = toolbar.menu.findItem(R.id.action_search)
         val searchView = buscador.actionView as SearchView
 
 
 
 
-
+        // listener del searchView.
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                query.let {

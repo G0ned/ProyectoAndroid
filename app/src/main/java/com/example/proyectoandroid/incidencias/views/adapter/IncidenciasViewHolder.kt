@@ -6,9 +6,11 @@ import com.example.proyectoandroid.databinding.ItemIncidenciaBinding
 import com.example.proyectoandroid.incidencias.models.Incidencias
 
 
-
+//Clase view holder para el recycler view de incidencias.
 class IncidenciasViewHolder(view:View):RecyclerView.ViewHolder(view){
 
+
+    //refernecia al archivo xml -> item_incidencia.xml en la carpeta layout
     val binding = ItemIncidenciaBinding.bind(view)
 
 

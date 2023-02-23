@@ -6,6 +6,8 @@ class ReservasProv {
 
     companion object {
 
+
+        //método que añade una reserva a la lista.
         fun addReservas(reservas: Reservas) {
 
             reservasList.add(reservas)

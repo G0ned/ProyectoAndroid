@@ -19,8 +19,9 @@ import com.example.proyectoandroid.incidencias.views.adapter.IncidenciasAdapter
 import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasViewModel
 
 class IncidendiasFragment : Fragment() {
-
+    //referencia del archivo xml -> fragment_incidencias.xml  en la carpeta layout
     private lateinit var binding: FragmentIncidendiasBinding
+    //referencia del ViewModel del archivo IncidenciasViewModel
     val incidenciasViewModel :IncidenciasViewModel by viewModels()
 
     override fun onCreateView(
@@ -39,15 +40,17 @@ class IncidendiasFragment : Fragment() {
     //metodo que inicializa los elementos del recyclerview siempre que la lista "listaIncidencia" del viewmodels es modificada.
     private fun initRecyclerView(){
 
+        // Observer que se ejecuta cuando en la listaIncidencia del archivo incidenciasViewModel.kt en la carpeta incidencias/views, es modificado.
         incidenciasViewModel.listaIncidencias.observe(viewLifecycleOwner, Observer {
             val manager = LinearLayoutManager(context)
-            val adapter = IncidenciasAdapter(incidenciasViewModel.listaIncidencias.value?.toList() ?: emptyList()) {
+            val adapter = IncidenciasAdapter(incidenciasViewModel.listaIncidencias.value?.toList() ?: emptyList()) // ?: si listaIncidencia devuelve null usa emptyList()
+            {
                     incidencia -> goToFullObject(incidencia)
             }
-            val decoration = DividerItemDecoration(context,manager.orientation)
-            binding.recyclerview.layoutManager=  manager
-            binding.recyclerview.adapter = adapter
-            binding.recyclerview.addItemDecoration(decoration)
+            val decoration = DividerItemDecoration(context,manager.orientation) // genera el item que va ha dividir los Items.
+            binding.recyclerview.layoutManager=  manager //  añade el manager al recycler view.
+            binding.recyclerview.adapter = adapter // añade el adapter al manager al recycler view.
+            binding.recyclerview.addItemDecoration(decoration) // añade el item de decoración al recycler view.
         })
 
 
@@ -55,15 +58,18 @@ class IncidendiasFragment : Fragment() {
 
 
 
-    //metodo  que envia la información del item selecionado al fragmento de verIncidenciasFragment.
+    //método  que envía la información del item selecionado al fragmento de verIncidenciasFragment.
     fun goToFullObject( incidencias: Incidencias) {
         Toast.makeText(context,incidencias.profesor, Toast.LENGTH_SHORT).show()
+        // bundle para pasar la información al otro fragmento.
         val bundle = bundleOf(
             "profesor" to incidencias.profesor,
             "descripcion" to incidencias.descripcion,
             "fecha" to  incidencias.fecha
 
         )
+        // referencia del navController del archivo xml -> nav_menu_incidencias.xml en la carpeta navigation.
+        // Se pasa un parametro bundle como args  para pasar información necesaria con la que va a trabajar el otro fragmento.
         view?.findNavController()?.navigate(R.id.action_incidenciasFragment_to_verIncidenciasFragment, args = bundle)
 
     }
