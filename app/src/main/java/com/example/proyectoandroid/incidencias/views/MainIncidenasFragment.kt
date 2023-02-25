@@ -2,6 +2,7 @@ package com.example.proyectoandroid.incidencias.views
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -63,7 +64,10 @@ class MainIncidenasFragment : Fragment() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                query.let {
-                   incidenciasViewModel.listaIncidencias.value?.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(query.toString()) }
+
+
+
+
 
                }
                 return false
@@ -72,7 +76,7 @@ class MainIncidenasFragment : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText.let {
 
-                    incidenciasViewModel.listaIncidencias.value?.filter { incidencias : Incidencias -> incidencias.profesor.lowercase().contains(newText.toString()) }
+
 
                 }
                 return false

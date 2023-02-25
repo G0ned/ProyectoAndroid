@@ -21,8 +21,8 @@ class IncidenciasAdapter(private var incidencialist : List<Incidencias>, private
         holder.render(item,Listener)
 
 
-
     }
+
 
 
 
