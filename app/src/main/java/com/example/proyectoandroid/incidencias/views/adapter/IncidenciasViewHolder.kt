@@ -10,10 +10,10 @@ import com.example.proyectoandroid.incidencias.models.Incidencias
 class IncidenciasViewHolder(view:View):RecyclerView.ViewHolder(view){
 
 
-    //refernecia al archivo xml -> item_incidencia.xml en la carpeta layout
+    //refernencia al archivo xml -> item_incidencia.xml en la carpeta layout
     val binding = ItemIncidenciaBinding.bind(view)
 
-
+   //
     fun render (incidenciaModel: Incidencias, Listener :(Incidencias) -> Unit){
 
         binding.incidenciaFecha.text = "Fecha: ${incidenciaModel.fechaIncidencias}"
