@@ -16,9 +16,9 @@ class IncidenciasViewHolder(view:View):RecyclerView.ViewHolder(view){
 
     fun render (incidenciaModel: Incidencias, Listener :(Incidencias) -> Unit){
 
-        binding.incidenciaFecha.text = incidenciaModel.fecha
-        binding.incidenciaProfesor.text = incidenciaModel.profesor
-        binding.incidenciaDescripcion.text = incidenciaModel.descripcion
+        binding.incidenciaFecha.text = "Fecha: ${incidenciaModel.fechaIncidencias}"
+        binding.incidenciaAulaGrupo.text = "Aula: ${incidenciaModel.codAula} Equipo: ${incidenciaModel.codEquipo} "
+        binding.incidenciaDescripcion.text =  "Descripción: ${incidenciaModel.descripcion}"
         itemView.setOnClickListener { Listener(incidenciaModel) }
 
     }

@@ -3,7 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.proyectoandroid.incidencias.views.IncidendiasFragment" >
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchViewIncidencias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Profesor"
+        />
 
 
     <androidx.recyclerview.widget.RecyclerView

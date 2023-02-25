@@ -1,5 +1,6 @@
 package com.example.proyectoandroid.incidencias.views
 
+import android.icu.util.Calendar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,9 @@ import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentCrearIncidenciaBinding
 import com.example.proyectoandroid.incidencias.models.Incidencias
 import com.example.proyectoandroid.incidencias.models.IncidenciasProv
+import java.text.SimpleDateFormat
+import java.time.LocalDate
+import java.util.*
 
 
 class CrearIncidenciaFragment : Fragment() {
@@ -36,25 +40,26 @@ class CrearIncidenciaFragment : Fragment() {
             limpiarPantalla()
         }
 
-
-
-
         return  binding.root
     }
 
     // método que crea un objeto de la Data class Incidencias.
     private fun createIncidencia() : Incidencias {
 
+        val sdf = SimpleDateFormat("dd/MM/yyyy")
+        val currentDate = sdf.format(Date())
+
         return Incidencias(
-            "11-11-2011",
-            binding.profesorContent.text.toString(),
-            binding.descripcionContent.text.toString()
+            currentDate.toString(),
+            binding.descripcionContent.text.toString(),
+            binding.codigoaulaContent.text.toString(),
+            binding.codigoequipoContent.text.toString(),
+
         )
 
     }
     // método que pone el valor de los campos a vacio.
     private  fun limpiarPantalla() {
-        binding.profesorContent.text = null
         binding.descripcionContent.text = null
         binding.codigoaulaContent.text = null
         binding.codigoequipoContent.text = null

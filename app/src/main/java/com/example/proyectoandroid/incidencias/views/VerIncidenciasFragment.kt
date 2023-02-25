@@ -25,9 +25,10 @@ class VerIncidenciasFragment : Fragment() {
         // se recogen los parametros que se envian al cambiar de fragmento en el archivo -> IncidenciasFragment en el método de goToFullObject.
         arguments?.let {
            incidencia = Incidencias(
-               it.getString("fecha").toString(),
-               it.getString("profesor").toString(),
-               it.getString("descripcion").toString()
+               it.getString("fechaIncidencia").toString(),
+               it.getString("descripcion").toString(),
+               it.getString("codAula").toString(),
+               it.getString("codEquipo").toString()
            )
         }
     }
@@ -43,9 +44,11 @@ class VerIncidenciasFragment : Fragment() {
 
     // distribuye la información obtenida por el bundle a sus campos correspondientes.
     private fun setData(incidencia : Incidencias) {
-        binding.profesorIncContent.text = incidencia.profesor
         binding.descIncContent.text = incidencia.descripcion
-        binding.fechaIncContent.text = incidencia.fecha
+        binding.fechaIncContent.text = incidencia.fechaIncidencias
+        binding.codaulaIncContent.text = incidencia.codAula
+        binding.codequipoIncContent.text = incidencia.codEquipo
+
     }
 
 }

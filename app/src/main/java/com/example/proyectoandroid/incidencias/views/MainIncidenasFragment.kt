@@ -12,6 +12,8 @@ import com.example.proyectoandroid.databinding.FragmentMainIncidenasBinding
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.viewModels
+import com.example.proyectoandroid.databinding.FragmentIncidendiasBinding
+import com.example.proyectoandroid.databinding.FragmentVerIncidenciasBinding
 import com.example.proyectoandroid.incidencias.models.Incidencias
 import com.example.proyectoandroid.incidencias.viewmodels.IncidenciasViewModel
 
@@ -52,38 +54,13 @@ class MainIncidenasFragment : Fragment() {
 
 
         toolbar.inflateMenu(R.menu.toolbar_menu)
-
         // referencia del search view  del tool bar.
-        val buscador = toolbar.menu.findItem(R.id.action_search)
-        val searchView = buscador.actionView as SearchView
-
 
 
 
         // listener del searchView.
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-               query.let {
 
 
-
-
-
-               }
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                newText.let {
-
-
-
-                }
-                return false
-            }
-
-
-        })
 
     }
 

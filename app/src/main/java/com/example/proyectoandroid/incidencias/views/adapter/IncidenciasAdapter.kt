@@ -8,6 +8,9 @@ import com.example.proyectoandroid.incidencias.models.Incidencias
 
 //Clase que crear el adaptador que necesita el reclyview de incidencias para crear el viewholder.
 class IncidenciasAdapter(private var incidencialist : List<Incidencias>, private val Listener :(Incidencias) -> Unit) : RecyclerView.Adapter<IncidenciasViewHolder>() {
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IncidenciasViewHolder {
     val layoutInflater = LayoutInflater.from(parent.context)
     return IncidenciasViewHolder(layoutInflater.inflate(R.layout.item_incidencia, parent, false))
@@ -22,6 +25,12 @@ class IncidenciasAdapter(private var incidencialist : List<Incidencias>, private
 
 
     }
+
+    fun Update(listaFiltrada : List<Incidencias>) {
+         incidencialist = listaFiltrada
+        notifyDataSetChanged()
+    }
+
 
 
 
