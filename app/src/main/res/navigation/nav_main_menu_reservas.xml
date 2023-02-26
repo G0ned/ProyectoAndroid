@@ -3,16 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main_menu_reservas"
-    app:startDestination="@id/crearReservaFragment">
+    app:startDestination="@id/crearReservaFragment"
+    >
+
+
 
     <fragment
         android:id="@+id/crearReservaFragment"
         android:name="com.example.proyectoandroid.reservas.views.CrearReservaFragment"
         android:label="@string/TituloCrearReservas"
-        tools:layout="@layout/fragment_crear_reserva" />
+        tools:layout="@layout/fragment_crear_reserva"
+
+        />
     <fragment
         android:id="@+id/misReservasFragment"
         android:name="com.example.proyectoandroid.reservas.views.MisReservasFragment"
         android:label="@string/TituloMisReservas"
         tools:layout="@layout/fragment_mis_reservas" />
+
+    <action
+        android:id="@+id/action_global_crearReservaFragment"
+        app:destination="@id/crearReservaFragment" />
 </navigation>

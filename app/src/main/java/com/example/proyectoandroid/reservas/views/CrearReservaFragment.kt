@@ -6,17 +6,60 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.proyectoandroid.databinding.FragmentCrearReservaBinding
+import com.example.proyectoandroid.reservas.models.Session
 
 class CrearReservaFragment : Fragment() {
 
     // referencia a al archivo xml -> fragment_crear_reservas.xml en la carpeta layout.
     private lateinit var binding : FragmentCrearReservaBinding
 
+     var session : Session? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        childFragmentManager.setFragmentResultListener("session", viewLifecycleOwner) { key, bundle ->
+
+            session = Session(
+
+                bundle.getString("nombre").toString(),
+                bundle.getString("rol").toString()
+
+            )
+
+        }
+
+
+
         binding = FragmentCrearReservaBinding.inflate(inflater, container, false)
+        println("####"+session?.rol)
+
+        when (session?.rol) {
+
+            "Profesorado" -> {
+
+                binding.profesorTextView.visibility = View.VISIBLE
+                binding.profesorTextView.text = session?.nombre
+
+            }
+            "EquipoDirectivo" -> {
+
+                binding.profesorEditText.visibility = View.VISIBLE
+
+            }
+
+        }
+
+
+
         binding.selFechaEt.setOnClickListener{mostrarCalendario()}
         // Inflate the layout for this fragment
         return binding.root

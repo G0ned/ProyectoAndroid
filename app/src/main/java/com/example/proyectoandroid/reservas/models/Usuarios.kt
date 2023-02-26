@@ -1,9 +1,9 @@
 package com.example.proyectoandroid.reservas.models
 
-data class Profesores(
+data class Usuarios(
 
     val nombre : String,
-    val rol : String,
+    val tipo : String,
     val usuario : String,
     val clave : String
 

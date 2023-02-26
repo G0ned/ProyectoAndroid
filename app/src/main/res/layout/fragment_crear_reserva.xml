@@ -8,15 +8,6 @@
     android:orientation="vertical"
     tools:context=".reservas.views.CrearReservaFragment">
 
-    <TextView
-        android:id="@+id/reservar_tag"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/reservar_grande"
-        android:textAlignment="center"
-        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/sel_fecha_et"
@@ -27,12 +18,28 @@
         android:focusable="false"
         android:hint="@string/AyudaFecha" />
 
-    <EditText
-        android:id="@+id/editText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:hint="@string/profesor_tag_str" />
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@+id/profesorEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="invisible"
+            android:hint="@string/profesor_tag_str" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profesorTextView"
+            android:visibility="invisible"
+            />
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/et_cursogrupo"

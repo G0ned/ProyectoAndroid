@@ -16,9 +16,7 @@ class IncidenciasViewModel : ViewModel() {
 
     }
 
-    fun filtrarIncidencias(listaFiltrada : List<Incidencias>) {
-        listaIncidencias.postValue(listaFiltrada.toMutableList())
-    }
+
 
 
 }
