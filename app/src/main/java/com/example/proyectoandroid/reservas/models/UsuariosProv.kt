@@ -15,12 +15,12 @@ class UsuariosProv {
             ),
             Usuarios(
                 "Equipo Directivo",
-                "EquipoDirectivo",
+                "ED",
                 "EquipoDirectivo",
                 "123"
             )
 
-            )
+        )
 
     }
 

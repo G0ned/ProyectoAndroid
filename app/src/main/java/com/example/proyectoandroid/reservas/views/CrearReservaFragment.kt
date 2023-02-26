@@ -22,11 +22,11 @@ class CrearReservaFragment : Fragment() {
 
             session = Session(
                 it?.getString("nombre").toString(),
-                it?.getString("tipo").toString()
-            )
+                it?.getString("tipo").toString(),
+                it?.getString("usuario").toString()
+                )
 
         }
-
 
     }
 
@@ -48,7 +48,7 @@ class CrearReservaFragment : Fragment() {
                 binding.profesorTextView.text = session?.nombre
 
             }
-            "EquipoDirectivo" -> {
+            "ED" -> {
 
                 binding.profesorEditText.visibility = View.VISIBLE
 

@@ -40,7 +40,8 @@ class ReservasLogInFragment : Fragment() {
                 println("### " +usuarioValidado.nombre +" "+usuarioValidado.tipo)
                 val bundle = bundleOf(
                     "nombre" to usuarioValidado.nombre,
-                    "tipo" to usuarioValidado.tipo
+                    "tipo" to usuarioValidado.tipo,
+                    "usuario" to usuarioValidado.usuario
 
                 )
                 view?.findNavController()?.navigate(R.id.action_reservasLogInFragment_to_reservasMainMenuFragment, args = bundle)
