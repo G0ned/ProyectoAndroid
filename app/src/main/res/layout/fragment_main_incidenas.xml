@@ -24,7 +24,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_menu_incidencias" />
+         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNavigationViewIncidencias"

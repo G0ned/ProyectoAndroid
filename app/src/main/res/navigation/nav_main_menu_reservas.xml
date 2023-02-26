@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main_menu_reservas"
-    app:startDestination="@id/crearReservaFragment"
-    >
+    app:startDestination="@id/crearReservaFragment">
 
 
 
@@ -21,7 +20,4 @@
         android:label="@string/TituloMisReservas"
         tools:layout="@layout/fragment_mis_reservas" />
 
-    <action
-        android:id="@+id/action_global_crearReservaFragment"
-        app:destination="@id/crearReservaFragment" />
 </navigation>

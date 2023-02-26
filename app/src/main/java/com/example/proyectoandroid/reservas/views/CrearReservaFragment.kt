@@ -18,6 +18,16 @@ class CrearReservaFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        arguments.let {
+
+            session = Session(
+                it?.getString("nombre").toString(),
+                it?.getString("tipo").toString()
+            )
+
+        }
+
+
     }
 
 
@@ -25,18 +35,6 @@ class CrearReservaFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        childFragmentManager.setFragmentResultListener("session", viewLifecycleOwner) { key, bundle ->
-
-            session = Session(
-
-                bundle.getString("nombre").toString(),
-                bundle.getString("rol").toString()
-
-            )
-
-        }
-
 
 
         binding = FragmentCrearReservaBinding.inflate(inflater, container, false)

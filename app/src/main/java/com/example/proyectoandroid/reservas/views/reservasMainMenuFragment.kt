@@ -25,24 +25,21 @@ class reservasMainMenuFragment : Fragment() {
     // referencia del archivo xml -> toolbar_menu_reservas.xml en la carpeta menu.
     private lateinit var toolbar : Toolbar
 
+    private lateinit var bundle : Bundle
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        var bundle : Bundle
-
         arguments.let {
 
-         bundle = bundleOf(
-                "nombre" to  it!!.getString("nombre").toString(),
-                "rol" to  it!!.getString("tipo").toString()
+            bundle = bundleOf(
+                "nombre" to it?.getString("nombre").toString(),
+                "tipo" to it?.getString("tipo").toString()
+
             )
 
         }
-
-      childFragmentManager.setFragmentResult("session", bundle )
-
     }
-
 
     // Al crear la vista se monta el navView y el toolBar en la interfaz del recycler view.
 
@@ -60,9 +57,10 @@ class reservasMainMenuFragment : Fragment() {
         val navHostFragment =
             childFragmentManager.findFragmentById(R.id.fragmentContainerViewMainMenuReservas) as NavHostFragment
         val navController = navHostFragment.navController
-
+        navController.setGraph(R.navigation.nav_main_menu_reservas,bundle)
         val builder = AppBarConfiguration.Builder(navController.graph)
         val appBarConfiguration = builder.build()
+
         toolbar.setupWithNavController(navController, appBarConfiguration)
         NavView.setupWithNavController(navController)
 
