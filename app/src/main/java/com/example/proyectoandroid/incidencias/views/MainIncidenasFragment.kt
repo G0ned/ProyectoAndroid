@@ -41,6 +41,7 @@ class MainIncidenasFragment : Fragment() {
             childFragmentManager.findFragmentById(R.id.fragmentContainerViewMainMenuIncidencias) as NavHostFragment
         // obtiene la referencia del navController
         val navController = navHostFragment.navController
+        navController.setGraph(R.navigation.nav_menu_incidencias)
         // construye la configuración de la app bar
         val builder = AppBarConfiguration.Builder(navController.graph)
         val appBarConfiguration = builder.build()
@@ -54,11 +55,6 @@ class MainIncidenasFragment : Fragment() {
 
 
         toolbar.inflateMenu(R.menu.toolbar_menu)
-        // referencia del search view  del tool bar.
-
-
-
-        // listener del searchView.
 
 
 
