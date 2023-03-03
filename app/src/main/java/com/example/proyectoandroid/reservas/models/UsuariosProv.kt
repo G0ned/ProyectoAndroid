@@ -10,8 +10,7 @@ class UsuariosProv {
                 "Profesor de pruebas",
                 "Profesorado",
                 "Profesor",
-                "123",
-
+                "123"
             ),
             Usuarios(
                 "Equipo Directivo",
