@@ -37,7 +37,7 @@ class ReservasLogInFragment : Fragment() {
 
             if (usuarioValidado != null){
 
-                println("### " +usuarioValidado.nombre +" "+usuarioValidado.tipo)
+
                 val bundle = bundleOf(
                     "nombre" to usuarioValidado.nombre,
                     "tipo" to usuarioValidado.tipo,

@@ -15,7 +15,7 @@ class UsuariosViewModels : ViewModel() {
 
     fun validarUsuario(Usuario: String, Clave : String) : Usuarios? {
 
-       val usuarioFiltrado =  listaUsuarios.value?.filter { Usuarios -> Usuarios.usuario == Usuario && Usuarios.clave == Clave } ?: emptyList()
+       val usuarioFiltrado =  listaUsuarios.value?.filter { Usuarios -> Usuarios.usuario.lowercase() == Usuario.lowercase() && Usuarios.clave == Clave } ?: emptyList()
 
         if  (usuarioFiltrado.isEmpty() ) {
 

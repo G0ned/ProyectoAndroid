@@ -18,6 +18,31 @@ class ReservasProv {
         var reservasList = mutableListOf<Reservas>(
 
 
+            Reservas(
+                "10/03/2023",
+                "ProfeESO",
+                "ESO1A",
+                "MEDUSA1",
+                "1"
+
+            ),
+            Reservas(
+                "10/03/2023",
+                "ProfeESO",
+                "ESO2B",
+                "MEDUSA1",
+                "4"
+
+            ),
+            Reservas(
+                "10/03/2023",
+                "ProfeFP",
+                "CFGMFORESTALES2",
+                "MEDUSA2",
+                "1"
+
+            )
+
 
         )
 

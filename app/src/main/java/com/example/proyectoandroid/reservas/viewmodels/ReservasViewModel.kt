@@ -12,9 +12,17 @@ class ReservasViewModel : ViewModel() {
     var listaReservas = MutableLiveData<MutableList<Reservas>>()
 
 
+
+
     // método que se encarga de remplazar la información de la variable listaReservas.
     fun getReservas()   {
         listaReservas.postValue(ReservasProv.reservasList)
+
+    }
+
+    fun filtrarPorProfesor(profesor : String) :List<Reservas> {
+
+        return listaReservas.value?.filter { reserva -> reserva.profesor.lowercase() == profesor.lowercase() } ?: emptyList()
 
     }
 

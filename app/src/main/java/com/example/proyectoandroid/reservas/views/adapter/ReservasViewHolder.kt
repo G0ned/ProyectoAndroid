@@ -16,11 +16,11 @@ class ReservasViewHolder(view :View):RecyclerView.ViewHolder(view) {
 
     // función que construyen los items del recyclerview.
     fun render(reservasModel : Reservas, Listener :(Reservas) -> Unit  ){
-        binding.reservasProfesor.text =  reservasModel.profesor
-        binding.reservasFecha.text = reservasModel.fecha
-        binding.reservasGrupo.text = reservasModel.grupo
-        binding.reservasHora.text = reservasModel.hora
-        itemView.setOnClickListener { Listener(reservasModel) }
+        binding.reservasProfesor.text = "Profesor: ${reservasModel.profesor}"
+        binding.reservasFecha.text = "Fecha: ${reservasModel.fecha}"
+        binding.reservasGrupo.text = "Grupo/Curso:  ${reservasModel.grupo}"
+        binding.reservasHora.text = "Hora: ${reservasModel.hora}"
+        binding.EliminarReservas.setOnClickListener { Listener(reservasModel) }
 
     }
 

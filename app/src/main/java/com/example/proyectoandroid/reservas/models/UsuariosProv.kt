@@ -7,9 +7,15 @@ class UsuariosProv {
         var ListaDeUsuarios = mutableListOf<Usuarios>(
 
             Usuarios(
-                "Profesor de pruebas",
+                "Profesor de ESO",
                 "Profesorado",
-                "Profesor",
+                "profeESO",
+                "123"
+            ),
+            Usuarios(
+                "Profesor de FP",
+                "Profesorado",
+                "profeFP",
                 "123"
             ),
             Usuarios(

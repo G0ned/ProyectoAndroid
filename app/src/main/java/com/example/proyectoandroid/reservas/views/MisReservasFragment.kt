@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -40,7 +41,7 @@ class MisReservasFragment : Fragment() {
 
         reservasViewModelView.listaReservas.observe(viewLifecycleOwner, Observer {
             val manager = LinearLayoutManager(context)
-            val adapter = ReservasAdapter(reservasViewModelView.listaReservas.value?.toList() ?: emptyList()) // ?: si la lista del viewmodel retorna null, envia una lista vacia.
+            val adapter = ReservasAdapter(reservasViewModelView.listaReservas.value?.toList() ?: emptyList() ) // ?: si la lista del viewmodel retorna null, envia una lista vacia.
             {
                 reserva -> GoTofullReservas(reserva)
             }
@@ -55,7 +56,7 @@ class MisReservasFragment : Fragment() {
     // función para ver toda la información en otro fragmento.
     private  fun GoTofullReservas(reserva : Reservas) {
 
-
+        Toast.makeText(context, reserva.grupo, Toast.LENGTH_SHORT).show()
 
     }
 
