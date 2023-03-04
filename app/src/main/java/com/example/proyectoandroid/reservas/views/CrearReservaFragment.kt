@@ -93,7 +93,15 @@ class CrearReservaFragment : Fragment() {
 
         binding.reservarBtn.setOnClickListener {
 
-            ReservasProv.addReservas(crearReserva())
+            val result : Reservas? = crearReserva()
+
+            if (result == null){
+                Toast.makeText(context, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
+             }else {
+                ReservasProv.addReservas(result)
+                Toast.makeText(context, "Reserva creada", Toast.LENGTH_SHORT).show()
+
+            }
 
         }
 
@@ -201,34 +209,43 @@ class CrearReservaFragment : Fragment() {
     }
 
 
-    private fun crearReserva(): Reservas {
-
-        var reserva : Reservas
+    private fun crearReserva(): Reservas? {
 
 
-        if (session!!.rol == "Profesorado") {
+       if (session!!.rol == "Profesorado") {
 
-           reserva  =  Reservas(
-                binding.selFechaEt.toString(),
-                session!!.nombre,
-                binding.SpinnerCursoGrupo.selectedItem.toString(),
+           return  Reservas(
+                binding.selFechaEt.text.toString(),
+                session!!.usuario,
+                binding.SpinnerCursoGrupo.selectedItem.toString().split("-")[1],
                 binding.profesorTextView.text.toString(),
                 binding.horaAReservas.selectedItem.toString()
             )
 
         }
-        else {
+        else if (session!!.rol == "ED") {
 
-            reserva  =  Reservas(
+           var nombreUser : String
+            if ( binding.profesorEditText.text.toString() == "")
+                    nombreUser = session!!.usuario
+            else {
+                nombreUser = binding.profesorEditText.text.toString()
+            }
+
+
+          return Reservas(
                 binding.selFechaEt.toString(),
-                session!!.nombre,
+                nombreUser,
                 binding.SpinnerCursoGrupo.selectedItem.toString(),
                 binding.profesorTextView.text.toString(),
                 binding.horaAReservas.selectedItem.toString()
 
-        }
-        return reserva
+            )
 
+        }else  {
+
+           return null
+        }
 
     }
 }
