@@ -12,6 +12,8 @@ import androidx.fragment.app.viewModels
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentCrearReservaBinding
 import com.example.proyectoandroid.reservas.models.Asignaturas
+import com.example.proyectoandroid.reservas.models.Reservas
+import com.example.proyectoandroid.reservas.models.ReservasProv
 import com.example.proyectoandroid.reservas.models.Session
 import com.example.proyectoandroid.reservas.viewmodels.AsignaturaViewModels
 import com.example.proyectoandroid.reservas.viewmodels.ReservasViewModel
@@ -25,16 +27,15 @@ class CrearReservaFragment : Fragment() {
     // referencia a al archivo xml -> fragment_crear_reservas.xml en la carpeta layout.
     private lateinit var binding: FragmentCrearReservaBinding
 
-    val reservasViewModelView : ReservasViewModel by viewModels()
+    val reservasViewModelView: ReservasViewModel by viewModels()
 
-    val asignaturasViewModelView : AsignaturaViewModels by viewModels()
+    val asignaturasViewModelView: AsignaturaViewModels by viewModels()
 
     var session: Session? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        reservasViewModelView.getReservas()
-        asignaturasViewModelView.initAsignaturas()
+
         arguments.let {
 
             session = Session(
@@ -54,6 +55,8 @@ class CrearReservaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        reservasViewModelView.getReservas()
+        asignaturasViewModelView.initAsignaturas()
 
         binding = FragmentCrearReservaBinding.inflate(inflater, container, false)
         println("####" + session?.usuario)
@@ -87,6 +90,14 @@ class CrearReservaFragment : Fragment() {
 
         }
 
+
+        binding.reservarBtn.setOnClickListener {
+
+            ReservasProv.addReservas(crearReserva())
+
+        }
+
+
     }
 
 
@@ -102,45 +113,56 @@ class CrearReservaFragment : Fragment() {
     // método obtiene la fecha elegida por el usuario.
     fun fechaElegida(day: Int, month: Int, year: Int) {
 
-       val fecha_texto = SimpleDateFormat("dd/MM/yyyy")
-        val current_date = fecha_texto.format(Date("$day/${month+1}/$year"))
+        val fecha_texto = SimpleDateFormat("dd/MM/yyyy")
+        val current_date = fecha_texto.format(Date("$day/${month + 1}/$year"))
         binding.selFechaEt.setText(current_date.toString())
         horasDisponibles(current_date.toString())
 
     }
 
-    private fun horasDisponibles(fecha_texto : String) {
+    private fun horasDisponibles(fecha_texto: String) {
 
-        val reservasDia =  reservasViewModelView.listaReservas.value?.filter { Reservas -> Reservas.fecha == fecha_texto } ?: emptyList()
+        val reservasDia =
+            reservasViewModelView.listaReservas.value?.filter { Reservas -> Reservas.fecha == fecha_texto }
+                ?: emptyList()
 
-        val horasDisponibles = mutableListOf<String>("1","2","3","4","5","6")
+        val horasDisponibles = mutableListOf<String>("1", "2", "3", "4", "5", "6")
 
 
-        reservasDia.forEach {
-             reservas ->
-                horasDisponibles.remove(reservas.hora)
+        reservasDia.forEach { reservas ->
+            horasDisponibles.remove(reservas.hora)
         }
 
 
-        binding.horaAReservas.adapter =  ArrayAdapter<String>(requireContext(), android.R.layout.simple_spinner_dropdown_item ,horasDisponibles)
+        binding.horaAReservas.adapter = ArrayAdapter<String>(
+            requireContext(),
+            android.R.layout.simple_spinner_dropdown_item,
+            horasDisponibles
+        )
     }
 
 
-    private fun setAsignaturas(profesor :String) {
+    private fun setAsignaturas(profesor: String) {
 
-        val asignaturasDelProfesor = asignaturasViewModelView.listaAsignaturas.value?.filter { Asignaturas -> Asignaturas.profesor.lowercase() == profesor.lowercase()} ?: emptyList()
+        val asignaturasDelProfesor =
+            asignaturasViewModelView.listaAsignaturas.value?.filter { Asignaturas -> Asignaturas.profesor.lowercase() == profesor.lowercase() }
+                ?: emptyList()
 
-        val cursosGruposAsignaturas  = mutableListOf(" ")
+        val cursosGruposAsignaturas = mutableListOf(" ")
 
-        val adapter =  ArrayAdapter(requireContext(), android.R.layout.simple_spinner_dropdown_item ,cursosGruposAsignaturas)
+        val adapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_dropdown_item,
+            cursosGruposAsignaturas
+        )
 
         asignaturasDelProfesor.forEach { Asignaturas ->
-           adapter.add("${Asignaturas.nombre}-${Asignaturas.cursoGrupos}")
+            adapter.add("${Asignaturas.nombre}-${Asignaturas.cursoGrupos}")
 
 
         }
 
-        binding.SpinnerCursoGrupo.adapter =  adapter
+        binding.SpinnerCursoGrupo.adapter = adapter
 
 
         binding.SpinnerCursoGrupo.onItemSelectedListener = object : OnItemSelectedListener {
@@ -151,19 +173,17 @@ class CrearReservaFragment : Fragment() {
                 id: Long
             ) {
 
-                if (session!!.rol == "Profesorado" ) {
+                if (session!!.rol == "Profesorado") {
 
 
-                    val seleccion :String = binding.SpinnerCursoGrupo.selectedItem.toString()
+                    val seleccion: String = binding.SpinnerCursoGrupo.selectedItem.toString()
 
-                    if (seleccion.contains("ESO") || seleccion.contains("FP") ) {
+                    if (seleccion.contains("ESO") || seleccion.contains("FP")) {
                         binding.aulasProf.text = "MEDUSA1"
 
-                    }else if (seleccion.contains("CFG") || seleccion.contains("BACH")) {
+                    } else if (seleccion.contains("CFG") || seleccion.contains("BACH")) {
                         binding.aulasProf.text = "MEDUSA2"
                     }
-
-
 
 
                 }
@@ -181,7 +201,36 @@ class CrearReservaFragment : Fragment() {
     }
 
 
-}
+    private fun crearReserva(): Reservas {
 
+        var reserva : Reservas
+
+
+        if (session!!.rol == "Profesorado") {
+
+           reserva  =  Reservas(
+                binding.selFechaEt.toString(),
+                session!!.nombre,
+                binding.SpinnerCursoGrupo.selectedItem.toString(),
+                binding.profesorTextView.text.toString(),
+                binding.horaAReservas.selectedItem.toString()
+            )
+
+        }
+        else {
+
+            reserva  =  Reservas(
+                binding.selFechaEt.toString(),
+                session!!.nombre,
+                binding.SpinnerCursoGrupo.selectedItem.toString(),
+                binding.profesorTextView.text.toString(),
+                binding.horaAReservas.selectedItem.toString()
+
+        }
+        return reserva
+
+
+    }
+}
 
 
