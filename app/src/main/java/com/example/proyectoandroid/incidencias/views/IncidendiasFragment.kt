@@ -99,6 +99,10 @@ class IncidendiasFragment : Fragment() {
                         adapter.Update(listaFiltrada)
 
                     }
+                    else {
+
+                        adapter.Update(emptyList())
+                    }
 
 
                 }

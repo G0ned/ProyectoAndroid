@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.DatePicker
 import androidx.fragment.app.DialogFragment
 import java.util.*
+import kotlin.time.Duration.Companion.milliseconds
 
 class SeleccionarFechaFragment (val listener: (day: Int, month: Int, year:Int)-> Unit): DialogFragment(),
     DatePickerDialog.OnDateSetListener {
@@ -21,7 +22,7 @@ class SeleccionarFechaFragment (val listener: (day: Int, month: Int, year:Int)->
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val calendario = Calendar.getInstance()
-        val day : Int = calendario.get(Calendar.DAY_OF_MONTH)
+        val day : Int = calendario.get(Calendar.DATE)
         val month : Int = calendario.get(Calendar.MONTH)
         val year : Int = calendario.get(Calendar.YEAR)
 

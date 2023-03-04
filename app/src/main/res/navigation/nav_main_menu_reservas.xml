@@ -19,5 +19,7 @@
         android:name="com.example.proyectoandroid.reservas.views.MisReservasFragment"
         android:label="@string/TituloMisReservas"
         tools:layout="@layout/fragment_mis_reservas" />
+    <include app:graph="@navigation/nav" />
+
 
 </navigation>

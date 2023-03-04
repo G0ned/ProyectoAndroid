@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid.R
+import com.example.proyectoandroid.incidencias.models.Incidencias
 import com.example.proyectoandroid.reservas.models.Reservas
 
 //adaptador para el recycler view del archivo xml -> fragment_mis_reservas.
@@ -20,5 +21,11 @@ class ReservasAdapter(private var reservasList : List<Reservas>, private  val Li
         val layoutInflater = LayoutInflater.from(parent.context)
         return ReservasViewHolder(layoutInflater.inflate(R.layout.item_reservas,parent,false))
     }
+
+    fun Update(listaFiltrada : List<Reservas>) {
+        reservasList = listaFiltrada
+        notifyDataSetChanged()
+    }
+
 
 }
