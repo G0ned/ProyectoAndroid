@@ -78,13 +78,19 @@ class CrearReservaFragment : Fragment() {
                 binding.profesorTextView.text = session?.nombre
                 binding.aulasProf.visibility = View.VISIBLE
 
-                setAsignaturas(session!!.usuario)
+
             }
             "ED" -> {
 
                 binding.profesorTextView.text = "Usuario del profesor"
                 binding.profesorEditText.visibility = View.VISIBLE
                 binding.aulasEd.visibility = View.VISIBLE
+
+
+
+
+
+
 
             }
 
@@ -125,6 +131,15 @@ class CrearReservaFragment : Fragment() {
         val current_date = fecha_texto.format(Date("$day/${month + 1}/$year"))
         binding.selFechaEt.setText(current_date.toString())
         horasDisponibles(current_date.toString())
+
+        if (session!!.rol == "Profesorado") {
+            setAsignaturas(session!!.usuario)
+
+        }else if (session!!.rol == "ED")
+        {
+
+        }
+
 
     }
 
