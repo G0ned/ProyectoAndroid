@@ -70,6 +70,8 @@ class CrearReservaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        // when que hace visible los campos que no son comunes para cada rol
         when (session?.rol) {
 
             "Profesorado" -> {
@@ -90,7 +92,7 @@ class CrearReservaFragment : Fragment() {
 
         }
 
-
+        //listener para el boton reservas.
         binding.reservarBtn.setOnClickListener {
 
             val result : Reservas? = crearReserva()
@@ -104,7 +106,7 @@ class CrearReservaFragment : Fragment() {
             }
 
         }
-
+        // listener para el boton limpiar.
         binding.limpiarBtn.setOnClickListener {
             limpiarVentana()
         }
@@ -120,7 +122,7 @@ class CrearReservaFragment : Fragment() {
         cursor_fecha.show(childFragmentManager, "cursor_fecha")
     }
 
-
+ // método que se encarga de limpiar los campos.
     private fun limpiarVentana(){
         binding.profesorEditText.text = null
         binding.selFechaEt.text = null
@@ -164,7 +166,7 @@ class CrearReservaFragment : Fragment() {
 
 
     }
-
+    //método que añade las horas disponibles de la fecha pasada por parametro al spinner correspondiente.
     private fun horasDisponibles(fecha_texto: String) {
 
         val reservasDia =
@@ -186,7 +188,11 @@ class CrearReservaFragment : Fragment() {
         )
     }
 
-
+ /*
+ metodo que añade las asignaturas de cada profesor a sus spinner correspondiente.
+ tambien se añaden listener a cada item del spiner para generar los datos de las aulas correspondientes
+ a ese curso.
+   * */
     private fun setAsignaturas(profesor: String) {
 
         val asignaturasDelProfesor : List<Asignaturas>
@@ -278,7 +284,7 @@ class CrearReservaFragment : Fragment() {
 
     }
 
-
+//este método genera un objeto Reservas que retorna se comprueba si hay tablets o no
     private fun crearReserva(): Reservas? {
 
 
