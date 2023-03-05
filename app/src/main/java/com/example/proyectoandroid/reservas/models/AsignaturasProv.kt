@@ -44,6 +44,12 @@ class AsignaturasProv {
                 5,
                 "ProfeFP"
 
+            ),
+            Asignaturas(
+                "ReservaED",
+                "ED",
+                99,
+                "EquipoDirectivo"
             )
 
 

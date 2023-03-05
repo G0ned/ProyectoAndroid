@@ -64,10 +64,23 @@ class MisReservasFragment : Fragment() {
 
         reservasViewModelView.listaReservas.observe(viewLifecycleOwner, Observer {
             val manager = LinearLayoutManager(context)
-            adapter = ReservasAdapter(reservasViewModelView.filtrarPorProfesor(session?.usuario.toString()) ) // ?: si la lista del viewmodel retorna null, envia una lista vacia.
-            {
-                reserva -> GoTofullReservas(reserva)
+            if (session!!.rol == "Profesorado") {
+
+                adapter = ReservasAdapter(reservasViewModelView.filtrarPorProfesor(session?.usuario.toString()) ) // ?: si la lista del viewmodel retorna null, envia una lista vacia.
+                {
+                        reserva -> EliminarReserva(reserva)
+                }
+
+
+            }else if (session!!.rol == "ED") {
+
+                adapter = ReservasAdapter(reservasViewModelView.listaReservas.value!!.toList() ) // ?: si la lista del viewmodel retorna null, envia una lista vacia.
+                {
+                        reserva -> EliminarReserva(reserva)
+                }
+
             }
+
             val decoration = DividerItemDecoration(context, manager.orientation) //crea la decoración que va ha separar los items.
             binding.recyclerviewMisReservas.layoutManager = manager // añade el manager al recycler view.
             binding.recyclerviewMisReservas.adapter = adapter //añade el adapter al recycler view.
@@ -77,7 +90,7 @@ class MisReservasFragment : Fragment() {
     }
 
     // función para ver toda la información en otro fragmento.
-    private  fun GoTofullReservas(reserva : Reservas) {
+    private  fun EliminarReserva(reserva : Reservas) {
 
         Toast.makeText(context, reserva.grupo, Toast.LENGTH_SHORT).show()
 
@@ -92,8 +105,23 @@ class MisReservasFragment : Fragment() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query.let {
 
+                    var listaFiltrada : List<Reservas> = emptyList()
 
-                    val listaFiltrada = reservasViewModelView.filtrarPorProfesor(session!!.usuario).filter { Reservas -> Reservas.fecha == query.toString() }
+                    if (session!!.rol == "Profesorado") {
+
+                         listaFiltrada = reservasViewModelView.filtrarPorProfesor(session!!.usuario).filter { Reservas -> Reservas.fecha == query.toString()  }
+                    }else if (session!!.rol == "ED") {
+
+                         listaFiltrada = reservasViewModelView.listaReservas.value!!.filter {
+                                 Reservas ->
+                             Reservas.fecha == query.toString() ||
+                             Reservas.profesor.lowercase() == query.toString().lowercase()
+
+                         }
+
+                    }
+
+
 
                     if (listaFiltrada.isNotEmpty()){
 
@@ -113,8 +141,14 @@ class MisReservasFragment : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText.let {
 
+                    if (session!!.rol == "Profesorado"){
 
-                    adapter.Update(reservasViewModelView.filtrarPorProfesor(session!!.usuario))
+                        adapter.Update(reservasViewModelView.filtrarPorProfesor(session!!.usuario))
+                    }else if (session!!.rol == "ED") {
+
+                        adapter.Update(reservasViewModelView.listaReservas.value!!.toList())
+
+                    }
 
 
                 }

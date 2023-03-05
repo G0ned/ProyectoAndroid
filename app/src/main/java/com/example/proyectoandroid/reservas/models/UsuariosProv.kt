@@ -9,13 +9,13 @@ class UsuariosProv {
             Usuarios(
                 "Profesor de ESO",
                 "Profesorado",
-                "profeESO",
+                "ProfeESO",
                 "123"
             ),
             Usuarios(
                 "Profesor de FP",
                 "Profesorado",
-                "profeFP",
+                "ProfeFP",
                 "123"
             ),
             Usuarios(

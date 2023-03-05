@@ -30,6 +30,10 @@ class UsuariosViewModels : ViewModel() {
 
     }
 
+    fun obtenerUsuario(Usuario : String) : Usuarios? {
 
+        return  listaUsuarios.value?.filter { Usuarios -> Usuarios.usuario.lowercase() == Usuario.lowercase() }?.last()
+
+    }
 
 }

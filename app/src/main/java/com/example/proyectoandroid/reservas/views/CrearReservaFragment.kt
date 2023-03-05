@@ -14,6 +14,7 @@ import com.example.proyectoandroid.databinding.FragmentCrearReservaBinding
 import com.example.proyectoandroid.reservas.models.*
 import com.example.proyectoandroid.reservas.viewmodels.AsignaturaViewModels
 import com.example.proyectoandroid.reservas.viewmodels.ReservasViewModel
+import com.example.proyectoandroid.reservas.viewmodels.UsuariosViewModels
 import kotlinx.coroutines.CoroutineScope
 import java.text.DateFormat
 import java.text.SimpleDateFormat
@@ -27,6 +28,8 @@ class CrearReservaFragment : Fragment() {
     val reservasViewModelView: ReservasViewModel by viewModels()
 
     val asignaturasViewModelView: AsignaturaViewModels by viewModels()
+
+    val usuariosViewModels: UsuariosViewModels by viewModels()
 
     var session: Session? = null
 
@@ -268,41 +271,58 @@ class CrearReservaFragment : Fragment() {
     private fun crearReserva(): Reservas? {
 
 
-       if (session!!.rol == "Profesorado") {
+        if (binding.selFechaEt.text.toString() != "") {
 
-           return  Reservas(
-                binding.selFechaEt.text.toString(),
-                session!!.usuario,
-                binding.SpinnerCursoGrupo.selectedItem.toString().split("-")[1],
-                binding.profesorTextView.text.toString(),
-                binding.horaAReservas.selectedItem.toString()
-            )
 
-        }
-        else if (session!!.rol == "ED") {
+            if (session!!.rol == "Profesorado") {
 
-           var nombreUser : String
-            if ( binding.profesorEditText.text.toString() == "")
+                return Reservas(
+                    binding.selFechaEt.text.toString(),
+                    session!!.usuario,
+                    binding.SpinnerCursoGrupo.selectedItem.toString().split("-")[1],
+                    binding.profesorTextView.text.toString(),
+                    binding.horaAReservas.selectedItem.toString()
+                )
+
+            } else if (session!!.rol == "ED") {
+
+                var nombreUser: String?
+                if (binding.profesorEditText.text.toString() == "")
                     nombreUser = session!!.usuario
-            else {
-                nombreUser = binding.profesorEditText.text.toString()
+                else {
+                    nombreUser =
+                        usuariosViewModels.obtenerUsuario(binding.profesorEditText.text.toString())?.usuario ?: null
+
+                    if (nombreUser == null) {
+
+                        return  null
+                    }
+
+                }
+
+
+
+
+                return Reservas(
+                    binding.selFechaEt.text.toString(),
+                    nombreUser!!,
+                    binding.SpinnerCursoGrupo.selectedItem.toString().split("-")[1],
+                    binding.profesorTextView.text.toString(),
+                    binding.horaAReservas.selectedItem.toString()
+
+                )
+
+            } else {
+
+                return null
             }
 
-
-          return Reservas(
-                binding.selFechaEt.toString(),
-                nombreUser,
-                binding.SpinnerCursoGrupo.selectedItem.toString(),
-                binding.profesorTextView.text.toString(),
-                binding.horaAReservas.selectedItem.toString()
-
-            )
-
-        }else  {
-
-           return null
         }
+        else {
 
+            return null
+
+        }
     }
 }
 
