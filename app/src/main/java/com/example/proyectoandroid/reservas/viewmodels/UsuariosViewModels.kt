@@ -2,6 +2,7 @@ package com.example.proyectoandroid.reservas.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.proyectoandroid.reservas.models.Reservas
 import com.example.proyectoandroid.reservas.models.Usuarios
 import com.example.proyectoandroid.reservas.models.UsuariosProv
 
@@ -32,7 +33,7 @@ class UsuariosViewModels : ViewModel() {
 
     fun obtenerUsuario(Usuario : String) : Usuarios? {
 
-        return  listaUsuarios.value?.filter { Usuarios -> Usuarios.usuario.lowercase() == Usuario.lowercase() }?.last()
+        return listaUsuarios.value?.filter { Usuarios -> Usuarios.usuario.lowercase() == Usuario.lowercase() }?.last() ?: null
 
     }
 
