@@ -20,6 +20,7 @@ import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentMisReservasBinding
 import com.example.proyectoandroid.incidencias.models.Incidencias
 import com.example.proyectoandroid.incidencias.views.adapter.IncidenciasAdapter
+import com.example.proyectoandroid.reservas.models.AulasProv
 import com.example.proyectoandroid.reservas.models.Reservas
 import com.example.proyectoandroid.reservas.models.ReservasProv
 import com.example.proyectoandroid.reservas.models.Session
@@ -96,17 +97,24 @@ class MisReservasFragment : Fragment() {
 
     }
 
-    // función para ver toda la información en otro fragmento.
+    // función para eliminar la reservas.
     private  fun EliminarReserva(reserva : Reservas) {
 
+        //obtenemos el aula tablets
+        val aulaTablet = AulasProv.getAulaTablets()
 
+        // función lambda para el boton confirmar del dialogo.
         val botonOK =  { dialog : DialogInterface, witch : Int ->
-
+            aulaTablet.CantidadDisponible += reserva.cantidadTablet
             ReservasProv.removeReservas(reserva)
             Toast.makeText(context, "Reserva eliminada" , Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.misReservasFragment, args =  arguments)
 
         }
+
+
+
+        // función lambda para el boton cancelar del dialogo.
 
         val botonNoOK =  { dialog : DialogInterface, witch : Int ->
 
@@ -114,6 +122,8 @@ class MisReservasFragment : Fragment() {
 
         }
 
+
+        //dialogo de confirmación.
 
             val dialogoCerrarAPP = AlertDialog.Builder(requireContext())
             dialogoCerrarAPP.setMessage("¿Seguro que desea eliminar la reserva?")
@@ -134,6 +144,8 @@ class MisReservasFragment : Fragment() {
 
         val searchView = binding.searchViewReservas
 
+        //listener del searchview permite filtrar por la fecha si tu rol es profesorado y por la fecha o usuario si eres ED
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query.let {
@@ -153,8 +165,6 @@ class MisReservasFragment : Fragment() {
                          }
 
                     }
-
-
 
                     if (listaFiltrada.isNotEmpty()){
 

@@ -4,6 +4,7 @@ class AulasProv {
 
     companion object {
 
+        // método que permite obtener el aula de las tablets.
         fun getAulaTablets() : Aulas {
 
             return listaAulas.filter {
