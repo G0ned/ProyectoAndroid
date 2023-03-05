@@ -100,27 +100,14 @@ class CrearReservaFragment : Fragment() {
              }else {
                 ReservasProv.addReservas(result)
                 Toast.makeText(context, "Reserva creada", Toast.LENGTH_SHORT).show()
-
+                limpiarVentana()
             }
 
         }
 
         binding.limpiarBtn.setOnClickListener {
-
-
-            binding.profesorEditText.text = null
-            binding.selFechaEt.text = null
-            binding.aulas.adapter = null
-            binding.SpinnerCursoGrupo.adapter = null
-            binding.horaAReservas.adapter = null
-            binding.cantidadTabletsEd.text = null
-            binding.cantidadtabletsEt.visibility = View.GONE
-            binding.cantidadTabletsEd.visibility = View.GONE
-
-
+            limpiarVentana()
         }
-
-
 
     }
 
@@ -131,6 +118,19 @@ class CrearReservaFragment : Fragment() {
         val cursor_fecha =
             SeleccionarFechaFragment { day, month, year -> fechaElegida(day, month, year) }
         cursor_fecha.show(childFragmentManager, "cursor_fecha")
+    }
+
+
+    private fun limpiarVentana(){
+        binding.profesorEditText.text = null
+        binding.selFechaEt.text = null
+        binding.aulas.adapter = null
+        binding.SpinnerCursoGrupo.adapter = null
+        binding.horaAReservas.adapter = null
+        binding.cantidadTabletsEd.text = null
+        binding.cantidadtabletsEt.visibility = View.GONE
+        binding.cantidadTabletsEd.visibility = View.GONE
+
     }
 
 
