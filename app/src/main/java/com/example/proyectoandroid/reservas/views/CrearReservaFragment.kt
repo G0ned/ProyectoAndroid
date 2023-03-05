@@ -230,6 +230,8 @@ class CrearReservaFragment : Fragment() {
 
 
         binding.SpinnerCursoGrupo.onItemSelectedListener = object : OnItemSelectedListener {
+
+            // este método sobreescribe la logica que realiza cuando un objeto está seleccionado.
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -275,6 +277,8 @@ class CrearReservaFragment : Fragment() {
 
             }
 
+            // este método sobreescribe la logica que hace cuando no hay nada seleccionado
+
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
@@ -285,6 +289,7 @@ class CrearReservaFragment : Fragment() {
     }
 
 //este método genera un objeto Reservas que retorna se comprueba si hay tablets o no
+// siempre que hay un error retorna null
     private fun crearReserva(): Reservas? {
 
 
@@ -364,11 +369,12 @@ class CrearReservaFragment : Fragment() {
         }
     }
 
-
+    //método que dependiendo si el aula es tablets activa los campos de las tablets.
     private fun Tabets(){
 
         binding.aulas.onItemSelectedListener = object : OnItemSelectedListener {
 
+            //método que sobreescribe la logica que se realiza al seleccionar un item.
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -390,7 +396,7 @@ class CrearReservaFragment : Fragment() {
 
 
             }
-
+            //método que sobreescribe la logica que se realiza al no  seleccionar un item.
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
