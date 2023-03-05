@@ -83,6 +83,7 @@ class reservasMainMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         toolbar.inflateMenu(R.menu.toolbar_menu_reservas)
 
+
     }
 
 

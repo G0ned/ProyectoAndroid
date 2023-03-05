@@ -15,9 +15,10 @@
         <activity
             android:name=".main.MainActivity"
             android:exported="true"
+            android:parentActivityName=".main.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateVisible|adjustResize"
-            >
+        >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

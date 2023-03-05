@@ -9,12 +9,15 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentMisReservasBinding
 import com.example.proyectoandroid.incidencias.models.Incidencias
 import com.example.proyectoandroid.incidencias.views.adapter.IncidenciasAdapter
 import com.example.proyectoandroid.reservas.models.Reservas
+import com.example.proyectoandroid.reservas.models.ReservasProv
 import com.example.proyectoandroid.reservas.models.Session
 
 import com.example.proyectoandroid.reservas.viewmodels.ReservasViewModel
@@ -92,7 +95,9 @@ class MisReservasFragment : Fragment() {
     // función para ver toda la información en otro fragmento.
     private  fun EliminarReserva(reserva : Reservas) {
 
-        Toast.makeText(context, reserva.grupo, Toast.LENGTH_SHORT).show()
+        ReservasProv.removeReservas(reserva)
+        Toast.makeText(context, "Reserva eliminada" , Toast.LENGTH_SHORT).show()
+        findNavController().navigate(R.id.misReservasFragment, args =  arguments)
 
     }
 

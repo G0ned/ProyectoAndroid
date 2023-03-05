@@ -12,37 +12,57 @@
     android:orientation="vertical"
     tools:context=".reservas.views.CrearReservaFragment">
 
-
-    <EditText
-        android:id="@+id/sel_fecha_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:clickable="false"
-        android:focusable="false"
-        android:hint="@string/AyudaFecha" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="10dp"
+
         android:orientation="vertical"
         >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/profesorTextView_et"
+            android:text="Nombre de Usuario"
+
+            />
 
         <EditText
             android:id="@+id/profesorEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:visibility="invisible"
-            android:hint="@string/profesor_tag_str" />
+            android:visibility="gone"
+            android:hint="@string/profesor_tag_str"
+            />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/profesorTextView"
-            android:visibility="invisible"
+            android:visibility="gone"
             />
 
     </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/fechaTextView_et"
+        android:text="Fecha a reservar"
+
+        />
+
+    <EditText
+        android:id="@+id/sel_fecha_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:hint="@string/AyudaFecha" />
 
 
     <TextView
@@ -73,19 +93,29 @@
             android:text="@string/aula_tag_str" />
 
         <Spinner
-            android:id="@+id/aulas_ed"
+            android:id="@+id/aulas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:visibility="invisible"
-            />
-        <TextView
-            android:id="@+id/aulas_prof"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:visibility="invisible"/>
 
+            />
+
+        <TextView
+            android:id="@+id/cantidadtablets_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tablets a reservar"
+            android:visibility="gone"
+            />
+
+
+        <EditText
+            android:id="@+id/cantidadTablets_ed"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
 
     </LinearLayout>
 
@@ -101,7 +131,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-
         />
 
 
@@ -124,7 +153,7 @@
             android:textColorHint="@color/white" />
 
         <Button
-            android:id="@+id/modificar_btn"
+            android:id="@+id/limpiar_btn"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_margin="5dp"

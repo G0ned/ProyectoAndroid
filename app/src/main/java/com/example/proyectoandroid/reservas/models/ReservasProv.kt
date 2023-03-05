@@ -14,6 +14,12 @@ class ReservasProv {
 
         }
 
+        fun removeReservas(reserva : Reservas) {
+
+            reservasList.remove(reserva)
+
+        }
+
 
         var reservasList = mutableListOf<Reservas>(
 
@@ -23,7 +29,8 @@ class ReservasProv {
                 "ProfeESO",
                 "ESO1A",
                 "MEDUSA1",
-                "1"
+                "1",
+                0
 
             ),
             Reservas(
@@ -31,7 +38,8 @@ class ReservasProv {
                 "ProfeESO",
                 "ESO2B",
                 "MEDUSA1",
-                "4"
+                "4",
+                0
 
             ),
             Reservas(
@@ -39,7 +47,8 @@ class ReservasProv {
                 "ProfeFP",
                 "CFGMFORESTALES2",
                 "MEDUSA2",
-                "1"
+                "1",
+                0
 
             )
 

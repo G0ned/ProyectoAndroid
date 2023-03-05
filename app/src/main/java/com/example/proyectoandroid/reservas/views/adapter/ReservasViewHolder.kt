@@ -20,6 +20,17 @@ class ReservasViewHolder(view :View):RecyclerView.ViewHolder(view) {
         binding.reservasFecha.text = "Fecha: ${reservasModel.fecha}"
         binding.reservasGrupo.text = "Grupo/Curso:  ${reservasModel.grupo}"
         binding.reservasHora.text = "Hora: ${reservasModel.hora}"
+        binding.reservasAula.text = "Aula: ${reservasModel.aula}"
+
+        if (reservasModel.aula == "TABLETS") {
+
+            binding.cantidadTablets.text = "Cantidad Tablets: ${reservasModel.cantidadTablet}"
+            binding.cantidadTablets.visibility = View.VISIBLE
+
+        }
+
+
+
         binding.EliminarReservas.setOnClickListener { Listener(reservasModel) }
 
     }

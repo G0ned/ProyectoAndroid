@@ -4,7 +4,7 @@ data class Aulas(
 
     val codigo : String,
     val CantidadTotal : Int,
-    val CantidadDisponible : Int,
-    val CantidadNoReservada : Int
+    var CantidadDisponible : Int,
+    var CantidadNoReservada : Int
 
 )

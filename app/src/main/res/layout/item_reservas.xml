@@ -36,10 +36,28 @@
                 android:layout_margin="5dp" />
 
             <TextView
+                android:id="@+id/reservas_aula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp" />
+
+            <TextView
                 android:id="@+id/reservas_hora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp" />
+
+            <TextView
+                android:id="@+id/cantidadTablets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:visibility="gone"
+                />
+
+
+
+
 
         </LinearLayout>
 
@@ -56,7 +74,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="right|center"
-                android:text="Eliminar" />
+                android:text="Eliminar"
+                />
 
         </LinearLayout>
 

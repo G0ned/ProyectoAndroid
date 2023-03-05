@@ -6,5 +6,6 @@ data class Reservas(
     val profesor : String,
     val grupo : String,
     val aula : String,
-    val hora : String
+    val hora : String,
+    val cantidadTablet : Int
 )
