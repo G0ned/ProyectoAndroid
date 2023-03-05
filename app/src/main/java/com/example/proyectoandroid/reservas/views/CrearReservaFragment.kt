@@ -11,10 +11,7 @@ import android.widget.AdapterView.OnItemSelectedListener
 import androidx.fragment.app.viewModels
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.databinding.FragmentCrearReservaBinding
-import com.example.proyectoandroid.reservas.models.Asignaturas
-import com.example.proyectoandroid.reservas.models.Reservas
-import com.example.proyectoandroid.reservas.models.ReservasProv
-import com.example.proyectoandroid.reservas.models.Session
+import com.example.proyectoandroid.reservas.models.*
 import com.example.proyectoandroid.reservas.viewmodels.AsignaturaViewModels
 import com.example.proyectoandroid.reservas.viewmodels.ReservasViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -75,8 +72,11 @@ class CrearReservaFragment : Fragment() {
             "Profesorado" -> {
 
                 binding.profesorTextView.visibility = View.VISIBLE
+                binding.profesorTextView.textSize = 20f
+                binding.aulasProf.textSize = 15f
                 binding.profesorTextView.text = session?.nombre
                 binding.aulasProf.visibility = View.VISIBLE
+                binding.profesorEditText
 
 
             }
@@ -138,6 +138,18 @@ class CrearReservaFragment : Fragment() {
         }else if (session!!.rol == "ED")
         {
 
+            if ( binding.profesorEditText.text.toString() == "") {
+
+                setAsignaturas(session!!.usuario)
+
+            }
+            else {
+
+                setAsignaturas(binding.profesorEditText.text.toString())
+
+            }
+
+
         }
 
 
@@ -167,11 +179,24 @@ class CrearReservaFragment : Fragment() {
 
     private fun setAsignaturas(profesor: String) {
 
-        val asignaturasDelProfesor =
-            asignaturasViewModelView.listaAsignaturas.value?.filter { Asignaturas -> Asignaturas.profesor.lowercase() == profesor.lowercase() }
-                ?: emptyList()
+        val asignaturasDelProfesor : List<Asignaturas>
 
-        val cursosGruposAsignaturas = mutableListOf(" ")
+
+        if (profesor == "EquipoDirectivo" ) {
+
+            asignaturasDelProfesor =
+                asignaturasViewModelView.listaAsignaturas.value?.toList() ?: emptyList()
+
+        }else{
+
+            asignaturasDelProfesor =
+                asignaturasViewModelView.listaAsignaturas.value?.filter { Asignaturas -> Asignaturas.profesor.lowercase() == profesor.lowercase() }
+                    ?: emptyList()
+
+        }
+
+
+        val cursosGruposAsignaturas = mutableListOf<String>()
 
         val adapter = ArrayAdapter(
             requireContext(),
@@ -207,6 +232,22 @@ class CrearReservaFragment : Fragment() {
                     } else if (seleccion.contains("CFG") || seleccion.contains("BACH")) {
                         binding.aulasProf.text = "MEDUSA2"
                     }
+
+
+                }
+                else if ( session!!.rol == "ED" ){
+
+                    val  listaAulas = mutableListOf<String>()
+
+                    val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,listaAulas)
+
+                    AulasProv.listaAulas.forEach{
+
+                        Aulas -> adapter.add(Aulas.codigo)
+
+                    }
+
+                    binding.aulasEd.adapter = adapter
 
 
                 }
